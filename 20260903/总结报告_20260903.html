@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20260903 交易计划总结报告</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--border:#e3e7ed;--text:#1b2330;--text-2:#5b6675;--text-3:#8a94a3;
+--brand:#1d4e89;--brand-soft:#eaf1f9;--up:#c62828;--up-soft:#fdecec;--down:#1b7a4b;--down-soft:#e8f5ee;
+--warn:#9a6205;--warn-soft:#fdf3e0;--radius:10px;--shadow:0 1px 2px rgba(20,30,45,.04),0 4px 16px rgba(20,30,45,.05)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;
+align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.brand{font-size:17px;font-weight:600;letter-spacing:.2px}.brand span{color:var(--text-3);font-weight:400;font-size:13px;margin-left:8px}
+.header-meta{margin-left:auto;font-size:12px;color:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.panel-h{padding:13px 20px;border-bottom:1px solid var(--border);background:var(--surface-2);
+font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-h .no{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--brand);
+color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:600}
+.panel-b{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:right;font-weight:600;color:var(--text-2);font-size:12px;background:var(--surface-2)}
+td:first-child,th:first-child{text-align:left;font-weight:600}
+.up{color:var(--up)}.down{color:var(--down)}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:1px 2px;
+background:var(--brand-soft);color:var(--brand)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag.buy{background:var(--up-soft);color:var(--up)}
+.tag.watch{background:var(--warn-soft);color:var(--warn)}
+.tag.mode-ban{background:#fdecec;color:#c62828;font-weight:600}
+.tag.mode-dip{background:#e8f1fb;color:#1a5fa8;font-weight:600}
+.tag.theme{background:var(--brand-soft);color:var(--brand);border:1px solid #cfe0f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 4px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.kpi .k{font-size:12px;color:var(--text-3)}.kpi .v{font-size:17px;font-weight:600;margin-top:3px}
+.kpi .v.up{color:var(--up)}.kpi .v.down{color:var(--down)}
+.narrative{background:var(--brand-soft);border-left:3px solid var(--brand);padding:10px 14px;
+border-radius:0 8px 8px 0;color:var(--text-2);font-size:13px;margin:10px 0}
+.focus-card{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.focus-head{padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);
+display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--up);color:#fff;
+font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.focus-name{font-size:15px;font-weight:600;color:var(--brand);text-decoration:none}
+.focus-score{margin-left:auto;font-size:12px;color:var(--text-2);font-weight:600}
+.focus-meta{padding:8px 16px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-2);background:#fff}
+.reasons{margin:0;padding:6px 16px 8px 34px;font-size:13px}
+.reasons li{margin:4px 0}
+.focus-link{padding:0 16px 10px;font-size:12px}
+.focus-link a{color:var(--brand);text-decoration:none;font-weight:500}
+.note{font-size:12px;color:var(--text-3);margin-top:8px}
+.core{font-size:13px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);
+border-radius:8px;padding:10px 14px;margin:6px 0}
+</style></head><body>
+<header><div class="brand">📊 交易计划 · 当日总结报告<span>20260903</span></div>
+<div class="header-meta">生成于 2026-09-04 02:15　|　源报告：复盘报告_综合_20260903.html</div></header>
+<div class="wrap">
+
+<div class="panel"><div class="panel-h"><span class="no">一</span>当日大盘走势总结</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">上证指数</div><div class="v up">+0.02%</div><div class="k">3942.09 · 8199亿</div></div><div class="kpi"><div class="k">深证成指</div><div class="v up">+0.10%</div><div class="k">13625.12 · 9390亿</div></div><div class="kpi"><div class="k">创业板指</div><div class="v up">+0.01%</div><div class="k">3312.54 · 4307亿</div></div><div class="kpi"><div class="k">北证50</div><div class="v down">-1.61%</div><div class="k">1088.75 · 215亿</div></div><div class="kpi"><div class="k">沪深300</div><div class="v up">+0.10%</div><div class="k">4552.58 · 4399亿</div></div><div class="kpi"><div class="k">科创50</div><div class="v down">-0.40%</div><div class="k">1611.17 · 566亿</div></div>
+</div>
+<div class="narrative">上证指数收 +0.02%，深证成指 +0.10%，创业板指 +0.01%，北证50 -1.61%（逆势走强），科创50 -0.40%（跌幅最深）。沪强深弱、权重相对抗跌，成长科技（科创/创业板）明显承压，市场呈结构性分化。两市合计成交约 1.76 万亿，量能温和。</div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3942.09</td><td class="up">+0.02%</td><td>8199 亿</td></tr><tr><td>深证成指</td><td>13625.12</td><td class="up">+0.10%</td><td>9390 亿</td></tr><tr><td>创业板指</td><td>3312.54</td><td class="up">+0.01%</td><td>4307 亿</td></tr><tr><td>北证50</td><td>1088.75</td><td class="down">-1.61%</td><td>215 亿</td></tr><tr><td>沪深300</td><td>4552.58</td><td class="up">+0.10%</td><td>4399 亿</td></tr><tr><td>科创50</td><td>1611.17</td><td class="down">-0.40%</td><td>566 亿</td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">二</span>盘面特征与主线</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">当日涨停</div><div class="v up">44 家</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">5 板</div></div>
+  <div class="kpi"><div class="k">生成计划</div><div class="v">38 只</div></div>
+</div>
+<table><thead><tr><th>连板梯队</th><th>家数</th></tr></thead><tbody><tr><td>5 板</td><td>1 家</td></tr><tr><td>4 板</td><td>2 家</td></tr><tr><td>2 板</td><td>6 家</td></tr><tr><td>1 板</td><td>35 家</td></tr></tbody></table>
+<div class="core"><b>复盘核心结论：</b>今日信号较强，命中 43 只；主线：培育钻石（舆情 5 分·极热·偏正面）；资金聚焦：深圳特区（主力净流入 +22.15 亿）；前日（2026-09-02）命中 47 只 → 今日仍命中 9 只，其中涨停 8 只（集泰股份、龙版传媒、云南旅游、金帝股份、光洋股份）。</div>
+<div class="note"><b>舆情热点：</b><span class="chip">培育钻石（5 分·极热·偏正面）</span><span class="chip">小盘股（5 分·极热·偏正面）</span><span class="chip">黄金概念（4 分·高热·偏正面）</span></div>
+<h3 style="margin:14px 0 6px;font-size:14px">板块资金流 TOP10（主力净流入 + 舆情热度）</h3>
+<table><thead><tr><th>#</th><th>板块</th><th>主力净流入</th><th>涨跌幅</th><th>舆情</th><th>领涨股</th></tr></thead><tbody><tr><td>1</td><td><b>培育钻石</b></td><td class="up">+18.25亿</td><td class="up">+4.51%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">黄河旋风</span><span class="chip">四方达</span><span class="chip">力量钻石</span></td></tr><tr><td>2</td><td><b>小盘股</b></td><td class="up">+18.37亿</td><td class="up">+0.19%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">黄河旋风</span><span class="chip">巨轮智能</span><span class="chip">大众交通</span></td></tr><tr><td>3</td><td><b>黄金概念</b></td><td class="up">+15.20亿</td><td class="up">+0.57%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">白银有色</span><span class="chip">湖南白银</span><span class="chip">赤峰黄金</span></td></tr><tr><td>4</td><td><b>小盘成长</b></td><td class="up">+15.22亿</td><td class="up">+0.30%</td><td>4 分 · 高热·中性</td><td><span class="chip">大众交通</span><span class="chip">思泉新材</span><span class="chip">光智科技</span></td></tr><tr><td>5</td><td><b>小金属概念</b></td><td class="up">+11.76亿</td><td class="up">+0.58%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">白银有色</span><span class="chip">博云新材</span><span class="chip">中国铝业</span></td></tr><tr><td>6</td><td><b>券商概念</b></td><td class="up">+18.75亿</td><td class="up">+0.49%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">中信证券</span><span class="chip">国盛证券</span><span class="chip">长江证券</span></td></tr><tr><td>7</td><td><b>深圳特区</b></td><td class="up">+22.15亿</td><td class="up">-0.07%</td><td>2 分 · 微热·偏正面</td><td><span class="chip">麦格米特</span><span class="chip">中国平安</span><span class="chip">工业富联</span></td></tr><tr><td>8</td><td><b>储能概念</b></td><td class="up">+16.60亿</td><td class="up">+0.14%</td><td>2 分 · 微热·偏正面</td><td><span class="chip">宁德时代</span><span class="chip">麦格米特</span><span class="chip">振华股份</span></td></tr><tr><td>9</td><td><b>宁组合</b></td><td class="up">+14.83亿</td><td class="up">+0.69%</td><td>1 分 · 低热·中性</td><td><span class="chip">三安光电</span><span class="chip">宁德时代</span><span class="chip">药明康德</span></td></tr><tr><td>10</td><td><b>金融地产风格</b></td><td class="up">+12.03亿</td><td class="up">+0.49%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">中国平安</span><span class="chip">中信证券</span><span class="chip">国盛证券</span></td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">三</span>重点关注个股（结合盘面筛选 · 共 8 只）</div><div class="panel-b">
+<div class="note" style="margin-bottom:6px">筛选逻辑：评分 / 连板梯队 / 封单比 / 龙虎榜净买 / 题材命中当日主线（培育钻石、小盘股、黄金概念）综合排序，双轮策略（题材代表优先 + 高分核心填充）。重点关注：603270、002300、002059、300830、002909、301486、002171、600657</div>
+<div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">1</span>
+        <a href="603270_金帝股份.html" class="focus-name">603270 金帝股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 90（综合 107）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 34.95</span><span>涨停价 34.95</span>
+        <span>2 连板</span>
+        <span>封单比 3.10%</span>
+        <span>龙虎榜 1949万</span>
+        
+        
+        <span class="tag theme">QFII重仓</span><span class="tag theme">减速器</span><span class="tag theme">机械设备</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「QFII重仓、减速器、机械设备」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 3.10%（封板资金锁定较强）</li><li>龙虎榜净买 1949万，有资金进场痕迹</li></ul>
+      <div class="focus-link"><a href="603270_金帝股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">2</span>
+        <a href="002300_太阳电缆.html" class="focus-name">002300 太阳电缆</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 90（综合 105）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 8.39</span><span>涨停价 8.39</span>
+        <span>2 连板</span>
+        <span>封单比 1.99%</span>
+        <span>龙虎榜 7154万</span>
+        
+        
+        <span class="tag theme">充电桩</span><span class="tag theme">电力设备</span><span class="tag theme">电网设备</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「充电桩、电力设备、电网设备」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 1.99%（封板较稳）</li><li>龙虎榜净买 7154万，有资金进场痕迹</li></ul>
+      <div class="focus-link"><a href="002300_太阳电缆.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">3</span>
+        <a href="002059_云南旅游.html" class="focus-name">002059 云南旅游</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 88（综合 105）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 5.78</span><span>涨停价 5.78</span>
+        <span>2 连板</span>
+        <span>封单比 3.24%</span>
+        <span>龙虎榜 6310万</span>
+        
+        
+        <span class="tag theme">REITs概念</span><span class="tag theme">旅游概念</span><span class="tag theme">社会服务</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「REITs概念、旅游概念、社会服务」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 3.24%（封板资金锁定较强）</li><li>龙虎榜净买 6310万，有资金进场痕迹</li></ul>
+      <div class="focus-link"><a href="002059_云南旅游.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">4</span>
+        <a href="300830_金现代.html" class="focus-name">300830 金现代</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 90（综合 103）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 10.09</span><span>涨停价 10.09</span>
+        <span>1 连板</span>
+        <span>封单比 3.02%</span>
+        <span>龙虎榜 1.28亿</span>
+        
+        
+        <span class="tag theme">充电桩</span><span class="tag theme">计算机</span><span class="tag theme">软件开发</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「充电桩、计算机、软件开发」，资金与舆情共振</li><li>封单比 3.02%（封板资金锁定较强）</li><li>龙虎榜净买 1.28亿，有资金进场痕迹</li></ul>
+      <div class="focus-link"><a href="300830_金现代.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">5</span>
+        <a href="002909_集泰股份.html" class="focus-name">002909 集泰股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 82（综合 99）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 8.01</span><span>涨停价 8.01</span>
+        <span>4 连板</span>
+        <span>封单比 2.82%</span>
+        <span>龙虎榜 8734万</span>
+        
+        
+        <span class="tag theme">电池技术</span><span class="tag theme">飞行汽车(eVTOL)</span><span class="tag theme">中俄贸易概念</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「电池技术、飞行汽车(eVTOL)、中俄贸易概念」，资金与舆情共振</li><li>4 连板，处于当日连板梯队高位</li><li>封单比 2.82%（封板较稳）</li><li>龙虎榜净买 8734万，有资金进场痕迹</li></ul>
+      <div class="focus-link"><a href="002909_集泰股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">6</span>
+        <a href="301486_致尚科技.html" class="focus-name">301486 致尚科技</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 92（综合 96）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 181.88</span>
+        
+        
+        
+        <span>止损 177.33</span>
+        
+        <span class="tag theme">小盘股</span><span class="tag theme">电子</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「小盘股、电子」，当日板块主力净流入 +18.37亿（+0.19%，热度 5 分 极热·偏正面）</li></ul>
+      <div class="focus-link"><a href="301486_致尚科技.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">7</span>
+        <a href="002171_楚江新材.html" class="focus-name">002171 楚江新材</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 91（综合 95）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 10.50</span>
+        
+        
+        
+        <span>止损 10.24</span>
+        
+        <span class="tag theme">小盘股</span><span class="tag theme">电池技术</span><span class="tag theme">可控核聚变</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「小盘股、电池技术、可控核聚变」，当日板块主力净流入 +18.37亿（+0.19%，热度 5 分 极热·偏正面）</li></ul>
+      <div class="focus-link"><a href="002171_楚江新材.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">8</span>
+        <a href="600657_信达地产.html" class="focus-name">600657 信达地产</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 82（综合 94）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 3.36</span><span>涨停价 3.36</span>
+        <span>2 连板</span>
+        <span>封单比 0.76%</span>
+        <span>龙虎榜 5150万</span>
+        
+        
+        <span class="tag theme">房地产</span><span class="tag theme">房地产开发</span><span class="tag theme">住宅开发</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「房地产、房地产开发、住宅开发」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 0.76%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 5150万，有资金进场痕迹</li></ul>
+      <div class="focus-link"><a href="600657_信达地产.html" target="_blank">查看完整交易计划 →</a></div>
+    </div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">四</span>操作提示与风险</div><div class="panel-b">
+<ul style="margin:0;padding-left:20px;font-size:13px">
+<li>指数分化（沪强深弱、科技承压），控制整体仓位，避免在弱势指数上追高。</li>
+<li>短线情绪靠题材维系（培育钻石、小盘股、黄金概念主线），打板接力优先主线龙头与高封单品种。</li>
+<li>连板高位股注意炸板与分歧风险；龙虎榜净卖的个股留意获利盘抛压。</li>
+<li>以上为数据模型建议，不构成投资建议；实际买卖请结合次日盘口与个人风控。</li>
+</ul>
+</div></div>
+
+</div></body></html>

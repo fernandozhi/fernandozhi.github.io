@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>601212 白银有色 · 打板/接力计划</title><style>:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --border: #e3e7ed;
+  --border-strong: #cfd6e0;
+  --text: #1b2330;
+  --text-2: #5b6675;
+  --text-3: #8a94a3;
+  --brand: #1d4e89;
+  --brand-soft: #eaf1f9;
+  --up: #c62828;
+  --up-soft: #fdecec;
+  --down: #1b7a4b;
+  --down-soft: #e8f5ee;
+  --warn: #9a6205;
+  --warn-soft: #fdf3e0;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20, 30, 45, .04), 0 4px 16px rgba(20, 30, 45, .05);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+               "PingFang SC", "Hiragino Sans GB", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Header ---------------- */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.brand { font-size: 16px; font-weight: 600; letter-spacing: .2px; }
+.brand span { color: var(--text-3); font-weight: 400; font-size: 13px; margin-left: 8px; }
+.brand-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brand); margin-right: 8px; vertical-align: 1px;
+}
+.header-meta { margin-left: auto; font-size: 12px; color: var(--text-3); }
+
+/* ---------------- Layout ---------------- */
+main {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 20px;
+  padding: 20px 24px 60px;
+  align-items: start;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+@media (max-width: 980px) {
+  main { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 74px;
+}
+@media (max-width: 980px) { .panel { position: static; } }
+
+.panel section { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.panel section:last-child { border-bottom: none; }
+
+.label {
+  font-size: 12px; font-weight: 600; color: var(--text-2);
+  text-transform: none; letter-spacing: .3px; margin-bottom: 8px; display: block;
+}
+.hint { font-size: 12px; color: var(--text-3); margin-top: 6px; line-height: 1.5; }
+
+textarea#codes {
+  width: 100%; min-height: 78px; resize: vertical;
+  padding: 10px 12px; font-size: 14px; line-height: 1.6;
+  border: 1px solid var(--border-strong); border-radius: 8px;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  color: var(--text); background: var(--surface-2);
+}
+textarea#codes:focus { outline: none; border-color: var(--brand); background: #fff; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip {
+  font-size: 12px; padding: 3px 9px; border-radius: 20px;
+  border: 1px solid var(--border-strong); background: var(--surface-2);
+  color: var(--text-2); cursor: pointer; transition: .15s;
+}
+.chip:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-soft); }
+
+.presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.preset {
+  padding: 7px 4px; font-size: 12px; text-align: center; cursor: pointer;
+  border: 1px solid var(--border-strong); border-radius: 7px;
+  background: var(--surface-2); color: var(--text-2); transition: .15s;
+}
+.preset:hover { border-color: var(--brand); color: var(--brand); }
+.preset.active {
+  background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 500;
+}
+
+details.params summary {
+  cursor: pointer; font-size: 12px; font-weight: 600; color: var(--text-2);
+  list-style: none; display: flex; align-items: center; justify-content: space-between;
+}
+details.params summary::-webkit-details-marker { display: none; }
+details.params summary::after { content: "+"; color: var(--text-3); font-weight: 400; }
+details.params[open] summary::after { content: "−"; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label { font-size: 11px; color: var(--text-3); }
+.field input {
+  padding: 6px 8px; font-size: 13px; border: 1px solid var(--border-strong);
+  border-radius: 6px; background: var(--surface-2); color: var(--text); width: 100%;
+}
+.field input:focus { outline: none; border-color: var(--brand); background: #fff; }
+.switch { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 13px; color: var(--text-2); }
+.switch input { width: 15px; height: 15px; accent-color: var(--brand); }
+
+button#run {
+  width: 100%; padding: 11px; margin: 0;
+  background: var(--brand); color: #fff; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 500; cursor: pointer; transition: .15s;
+}
+button#run:hover:not(:disabled) { background: #163d6d; }
+button#run:disabled { background: #9aa8bb; cursor: not-allowed; }
+
+#status { font-size: 12px; color: var(--text-3); margin-top: 10px; min-height: 18px; }
+#status.err { color: var(--up); }
+
+/* ---------------- Results ---------------- */
+.results { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+}
+.card-head {
+  padding: 12px 18px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px; background: var(--surface-2);
+  flex-wrap: wrap;
+}
+.card-head h2 { margin: 0; font-size: 14px; font-weight: 600; }
+.card-head .sub { font-size: 12px; color: var(--text-3); margin-left: auto; }
+.card-body { padding: 16px 18px; }
+
+.empty {
+  padding: 60px 24px; text-align: center; color: var(--text-3); font-size: 13px;
+}
+.empty strong { display: block; font-size: 15px; color: var(--text-2); margin-bottom: 8px; font-weight: 500; }
+
+/* progress */
+.prog { display: flex; flex-direction: column; gap: 8px; }
+.prog-bar { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.prog-bar i { display: block; height: 100%; background: var(--brand); width: 0; transition: width .3s; }
+.prog-list { font-size: 12px; color: var(--text-3); font-family: ui-monospace, Consolas, monospace; }
+.prog-list div { padding: 1px 0; }
+
+/* table */
+.tbl-wrap { overflow-x: auto; }
+table.cmp { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.cmp th, table.cmp td {
+  padding: 8px 10px; text-align: right; white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+table.cmp th {
+  text-align: right; font-weight: 600; color: var(--text-2); font-size: 12px;
+  background: var(--surface-2); position: sticky; top: 0; z-index: 1;
+}
+table.cmp td:first-child, table.cmp th:first-child { text-align: left; font-weight: 600; }
+table.cmp td.left, table.cmp th.left { text-align: left; }
+table.cmp tbody tr:hover { background: var(--surface-2); }
+table.cmp tbody tr.dim { color: var(--text-3); }
+
+.score-cell { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+.score-bar { width: 44px; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.score-bar i { display: block; height: 100%; background: var(--brand); }
+
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 12px; font-weight: 500; white-space: nowrap;
+}
+.tag.buy { background: var(--up-soft); color: var(--up); }
+.tag.watch { background: var(--warn-soft); color: var(--warn); }
+.tag.avoid { background: #eef0f3; color: var(--text-2); }
+.tag.err { background: var(--up-soft); color: var(--up); }
+.tag.mode-ban { background: #fdecec; color: #c62828; font-weight: 600; }
+.tag.mode-dip { background: #e8f1fb; color: #1a5fa8; font-weight: 600; }
+
+/* report */
+.report { padding: 4px 22px 24px; }
+.report h1 { font-size: 19px; margin: 20px 0 6px; font-weight: 600; }
+.report h2 {
+  font-size: 15px; margin: 26px 0 10px; font-weight: 600; color: var(--brand);
+  padding-bottom: 6px; border-bottom: 1px solid var(--border);
+}
+.report h3 { font-size: 14px; margin: 18px 0 8px; font-weight: 600; color: var(--text); }
+.report p { margin: 8px 0; }
+.report ul { margin: 8px 0; padding-left: 20px; }
+.report li { margin: 3px 0; }
+.report blockquote {
+  margin: 10px 0; padding: 8px 14px; background: var(--brand-soft);
+  border-left: 3px solid var(--brand); color: var(--text-2); font-size: 13px;
+}
+.report table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+.report th, .report td {
+  border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top;
+}
+.report th { background: var(--surface-2); font-weight: 600; color: var(--text-2); font-size: 12px; }
+.report tbody tr:nth-child(even) { background: var(--surface-2); }
+.report code {
+  background: var(--surface-2); padding: 1px 5px; border-radius: 4px;
+  font-family: ui-monospace, Consolas, monospace; font-size: 12px;
+}
+.report hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+.report strong { font-weight: 600; }
+.report em { color: var(--text-3); font-style: normal; font-size: 12px; }
+
+.report-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.report-tab {
+  padding: 4px 11px; font-size: 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--text-2); transition: .15s;
+}
+.report-tab:hover { border-color: var(--brand); color: var(--brand); }
+.report-tab.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+.actions { margin-left: auto; display: flex; gap: 6px; }
+.btn-sm {
+  padding: 4px 10px; font-size: 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-2);
+}
+.btn-sm:hover { border-color: var(--brand); color: var(--brand); }
+.btn-sm.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn-sm.primary:hover { background: #163d6d; color: #fff; }
+.btn-sm:disabled { opacity: .6; cursor: progress; }
+
+/* ---------------- 图片弹层 ---------------- */
+#imgModal { position: fixed; inset: 0; z-index: 100; }
+.img-modal-mask { position: absolute; inset: 0; background: rgba(15, 22, 33, .55); }
+.img-modal-box {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(820px, 94vw); max-height: 92vh; display: flex; flex-direction: column;
+  background: var(--surface); border-radius: 12px; box-shadow: 0 12px 48px rgba(0,0,0,.3);
+  overflow: hidden;
+}
+.img-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 14px;
+}
+.img-x {
+  border: none; background: transparent; font-size: 22px; line-height: 1; color: var(--text-3);
+  cursor: pointer; padding: 0 4px;
+}
+.img-x:hover { color: var(--text); }
+.img-modal-preview {
+  padding: 14px; overflow: auto; background: #eef1f5; flex: 1; text-align: center;
+}
+.img-modal-preview img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+.img-modal-preview .img-loading { color: var(--text-3); font-size: 13px; padding: 40px 0; }
+.img-modal-foot {
+  display: flex; gap: 8px; justify-content: flex-end; padding: 12px 16px;
+  border-top: 1px solid var(--border); background: var(--surface-2);
+}
+</style></head><body><header><div class="brand"><span class="brand-dot"></span>601212　白银有色<span>打板/接力计划</span></div><div class="header-meta">生成于 2026-09-04 02:15　|　来自复盘命中榜单（原评分 92 分）　|　模式：打板/接力</div></header><div class="card" style="margin:20px 24px 0;max-width:1100px;"><div class="card-head"><h2>结论速览</h2><span class="sub" style="display:flex;gap:10px;align-items:center;"><span style="font-size:13px;font-weight:700;color:#fff;background:#9a6205;border-radius:6px;padding:3px 12px;">打板评分 69</span><span style="font-size:12px;padding:2px 9px;border-radius:4px;color:#9a6205;background:#fdf3e0;">谨慎接力</span></span></div><div class="card-body"><table class="cmp"><tbody><tr><td style="text-align:left;font-weight:600;width:150px;">代码</td><td style="text-align:left;">601212</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">现价</td><td style="text-align:left;">7.33</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">涨停价</td><td style="text-align:left;">7.33</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">打板评分</td><td style="text-align:left;">69</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">操作建议</td><td style="text-align:left;">谨慎接力</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">模式</td><td style="text-align:left;">打板/接力</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">连板</td><td style="text-align:left;">1</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">封单额</td><td style="text-align:left;">9171万</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">封单比</td><td style="text-align:left;">0.17%</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">炸板次数</td><td style="text-align:left;">1</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">龙虎榜净买</td><td style="text-align:left;">2.43亿</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">换手率</td><td style="text-align:left;">7.95%</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">首封时间</td><td style="text-align:left;">13:01</td></tr><tr><td style="text-align:left;font-weight:600;width:150px;">流通市值(亿)</td><td style="text-align:left;">542.77</td></tr></tbody></table></div></div><div class="card" style="margin:16px 24px 40px;max-width:1100px;"><div class="card-head"><h2>打板/接力交易计划</h2><div class="actions"><a class="btn-sm primary" href="index.html">← 返回汇总</a></div></div><div class="report"><h1>601212 白银有色 打板/接力交易计划</h1><blockquote>生成时间：2026-09-04 02:15　|　涨跌幅限制：±10%　|　模式：<strong>打板/接力</strong>（涨停/连板股专属）</blockquote><h2>一、结论速览</h2><table><thead><tr><th>项目</th><th>结论</th></tr></thead><tbody><tr><td>模式判定</td><td><strong>打板 / 接力</strong>（当日涨停）</td></tr><tr><td>综合评分</td><td><strong>69.0 / 100</strong>（门槛 70）</td></tr><tr><td>操作建议</td><td><strong>谨慎接力</strong></td></tr><tr><td>现价 / 涨停价</td><td>7.33 / <strong>7.33</strong></td></tr><tr><td>次日竞价观察位</td><td>≤ 7.55（高开 3% 以内）</td></tr><tr><td>回踩低吸参考</td><td>7.11</td></tr><tr><td>硬止损位</td><td>6.89（约 -6%）</td></tr><tr><td>是否可参与</td><td>否（仅观察）</td></tr></tbody></table><h2>二、打板评分明细</h2><table><thead><tr><th>维度</th><th>得分</th><th>说明</th></tr></thead><tbody><tr><td>封单强度</td><td>5.0</td><td>封单比 0.17%（很弱(随时可被砸开)）</td></tr><tr><td>封板质量</td><td>14.0</td><td>炸板 1 次，快速回封，首封 13:05（涨停池 2 次 vs 分钟线实测 1 次，不一致需复核）</td></tr><tr><td>连板高度</td><td>15.0</td><td>首板(启动)</td></tr><tr><td>龙虎榜资金</td><td>20.0</td><td>机构/游资大举净买</td></tr><tr><td>量价换手</td><td>15.0</td><td>换手健康(充分换手)</td></tr></tbody></table><h2>三、涨停画像（封单 / 封板 / 连板）</h2><table><thead><tr><th>要素</th><th>数值</th><th>解读</th></tr></thead><tbody><tr><td>连板高度</td><td>1 板</td><td>首板，安全边际相对高</td></tr><tr><td>封单额</td><td>9171 万</td><td>封单比 0.17%（很弱(随时可被砸开)）</td></tr><tr><td>首次封板时间</td><td>13:01:36</td><td>封板偏晚，次日溢价不确定</td></tr><tr><td>炸板次数</td><td>2 次</td><td>反复炸板，分歧大</td></tr><tr><td>换手率</td><td>7.95%</td><td>换手健康</td></tr><tr><td>流通市值</td><td>542.77 亿</td><td>大盘，封板需巨量资金</td></tr></tbody></table><h3>3.1 封板质量分钟线验证（5 分钟实测）</h3><table><thead><tr><th>实测项</th><th>数值</th><th>解读</th></tr></thead><tbody><tr><td>首封时间</td><td>13:05</td><td>盘中封板</td></tr><tr><td>炸板次数</td><td>1 次</td><td>炸板后回封</td></tr><tr><td>最大炸板深度</td><td>1.09%</td><td>浅炸，承接强</td></tr><tr><td>回封耗时</td><td>10 分钟</td><td>快速回封，情绪强</td></tr><tr><td>尾盘 30 分钟</td><td>6/6 根封板</td><td>尾盘守住，封单未撤</td></tr><tr><td>涨停池对照</td><td>不一致（2 vs 1）</td><td>需复核数据口径</td></tr></tbody></table><h2>四、龙虎榜资金拆解</h2><table><thead><tr><th>要素</th><th>数值</th></tr></thead><tbody><tr><td>净买入</td><td><strong>2.43 亿</strong>（净流入）</td></tr><tr><td>买入额 / 卖出额</td><td>6.66 亿 / 4.23 亿</td></tr><tr><td>上榜原因</td><td>有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券</td></tr><tr><td>信号</td><td>机构/游资大举进场，接力资金充足</td></tr></tbody></table><h2>五、次日打板 / 接力策略</h2><ul><li><strong>核心逻辑</strong>：打板赚的是「封板强度 + 情绪溢价」的钱，接力赚的是「连板梯队延续」的钱；核心风险是「炸板 / 高位分歧」。</li></ul><ul><li><strong>竞价观察</strong>：次日高开超过 3%（&gt; 7.55）即性价比下降，首板高开过大易被兑现砸盘。</li></ul><ul><li><strong>介入方式</strong>：</li><li>试仓（打板）：集合竞价或开盘 5 分钟内快速回封涨停时，轻仓追入；封单比 &gt; 3% 才值得打。</li></ul><ul><li>低吸（接力）：分歧回踩至 7.11 附近且分时企稳时介入，不追高。</li></ul><ul><li><strong>止损铁律（T+1）</strong>：跌破 6.89（约 -6%）无条件离场。<strong>注意：打板买入当日仓位 T+1 锁仓，盘中炸板 / 跳水当天卖不出</strong>，止损只能买入次日执行；炸板后 10 分钟不回封 → 记为「次日开盘无条件离场」信号。</li></ul><ul><li><strong>仓位</strong>：打板单票建议 ≤ 25%，接力可略加但不超过 40%。</li></ul><h2>六、次日情景预案</h2><table><thead><tr><th>开盘情景</th><th>判断</th><th>执行动作</th></tr></thead><tbody><tr><td>一字涨停(买不进)</td><td>情绪极强但无介入机会</td><td>排队；若封单比 &lt; 0.5% 则撤单放弃</td></tr><tr><td>高开 &gt;3%</td><td>兑现盘压力大</td><td>不追，等回踩 7.11 企稳再考虑</td></tr><tr><td>高开 0~3%</td><td>健康溢价</td><td>竞价量能配合可试仓，重点看 5 分钟能否封板</td></tr><tr><td>平开 / 低开</td><td>情绪转弱或洗盘</td><td>若 30 分钟收复涨停价可接力；跌破 6.89 放弃</td></tr><tr><td>炸板</td><td>分歧爆发</td><td>当日买入无法卖出（T+1）；10 分钟不回封 → 次日开盘无条件离场；回封且封单比达标可再观察</td></tr></tbody></table><h2>七、风险提示</h2><ul><li>打板/接力是<strong>极高波动</strong>策略，涨停次日「天地板/炸板跳水」风险显著高于普通短线。</li></ul><ul><li>封单比极低，封板随时可能被大单砸开，次日大概率低开。</li></ul><ul><li>涨停次日的「一字跌停」无法卖出，止损可能失效，必须轻仓、分散。</li></ul><ul><li><strong>T+1 锁仓风险（本策略最大不可控风险）</strong>：打板买入当天仓位不可卖出，若盘中炸板 / 天地板跳水，当日无法止损，只能被动持仓至次日开盘处理。务必单票轻仓（≤ 建议仓位）并严格按封单质量前置筛选。</li></ul><ul><li>本分析基于盘后快照（封单/龙虎榜为收盘时点），次日竞价可能剧变；不构成投资建议。</li></ul><hr><p>*由 A股GOGOGO 第二版「打板/接力」模式生成。*</p></div></div><div class="footer" style="text-align:center;color:var(--text-3);font-size:12px;padding:10px 0 30px;">由 A股GOGOGO 第二版（纯前端版）批量生成 · 本计划仅基于历史价量数据，不构成投资建议</div></body></html>

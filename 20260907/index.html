@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>复盘命中榜单 · 批量交易计划汇总</title><style>:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --border: #e3e7ed;
+  --border-strong: #cfd6e0;
+  --text: #1b2330;
+  --text-2: #5b6675;
+  --text-3: #8a94a3;
+  --brand: #1d4e89;
+  --brand-soft: #eaf1f9;
+  --up: #c62828;
+  --up-soft: #fdecec;
+  --down: #1b7a4b;
+  --down-soft: #e8f5ee;
+  --warn: #9a6205;
+  --warn-soft: #fdf3e0;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20, 30, 45, .04), 0 4px 16px rgba(20, 30, 45, .05);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+               "PingFang SC", "Hiragino Sans GB", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Header ---------------- */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.brand { font-size: 16px; font-weight: 600; letter-spacing: .2px; }
+.brand span { color: var(--text-3); font-weight: 400; font-size: 13px; margin-left: 8px; }
+.brand-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brand); margin-right: 8px; vertical-align: 1px;
+}
+.header-meta { margin-left: auto; font-size: 12px; color: var(--text-3); }
+
+/* ---------------- Layout ---------------- */
+main {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 20px;
+  padding: 20px 24px 60px;
+  align-items: start;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+@media (max-width: 980px) {
+  main { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 74px;
+}
+@media (max-width: 980px) { .panel { position: static; } }
+
+.panel section { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.panel section:last-child { border-bottom: none; }
+
+.label {
+  font-size: 12px; font-weight: 600; color: var(--text-2);
+  text-transform: none; letter-spacing: .3px; margin-bottom: 8px; display: block;
+}
+.hint { font-size: 12px; color: var(--text-3); margin-top: 6px; line-height: 1.5; }
+
+textarea#codes {
+  width: 100%; min-height: 78px; resize: vertical;
+  padding: 10px 12px; font-size: 14px; line-height: 1.6;
+  border: 1px solid var(--border-strong); border-radius: 8px;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  color: var(--text); background: var(--surface-2);
+}
+textarea#codes:focus { outline: none; border-color: var(--brand); background: #fff; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip {
+  font-size: 12px; padding: 3px 9px; border-radius: 20px;
+  border: 1px solid var(--border-strong); background: var(--surface-2);
+  color: var(--text-2); cursor: pointer; transition: .15s;
+}
+.chip:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-soft); }
+
+.presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.preset {
+  padding: 7px 4px; font-size: 12px; text-align: center; cursor: pointer;
+  border: 1px solid var(--border-strong); border-radius: 7px;
+  background: var(--surface-2); color: var(--text-2); transition: .15s;
+}
+.preset:hover { border-color: var(--brand); color: var(--brand); }
+.preset.active {
+  background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 500;
+}
+
+details.params summary {
+  cursor: pointer; font-size: 12px; font-weight: 600; color: var(--text-2);
+  list-style: none; display: flex; align-items: center; justify-content: space-between;
+}
+details.params summary::-webkit-details-marker { display: none; }
+details.params summary::after { content: "+"; color: var(--text-3); font-weight: 400; }
+details.params[open] summary::after { content: "−"; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label { font-size: 11px; color: var(--text-3); }
+.field input {
+  padding: 6px 8px; font-size: 13px; border: 1px solid var(--border-strong);
+  border-radius: 6px; background: var(--surface-2); color: var(--text); width: 100%;
+}
+.field input:focus { outline: none; border-color: var(--brand); background: #fff; }
+.switch { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 13px; color: var(--text-2); }
+.switch input { width: 15px; height: 15px; accent-color: var(--brand); }
+
+button#run {
+  width: 100%; padding: 11px; margin: 0;
+  background: var(--brand); color: #fff; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 500; cursor: pointer; transition: .15s;
+}
+button#run:hover:not(:disabled) { background: #163d6d; }
+button#run:disabled { background: #9aa8bb; cursor: not-allowed; }
+
+#status { font-size: 12px; color: var(--text-3); margin-top: 10px; min-height: 18px; }
+#status.err { color: var(--up); }
+
+/* ---------------- Results ---------------- */
+.results { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+}
+.card-head {
+  padding: 12px 18px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px; background: var(--surface-2);
+  flex-wrap: wrap;
+}
+.card-head h2 { margin: 0; font-size: 14px; font-weight: 600; }
+.card-head .sub { font-size: 12px; color: var(--text-3); margin-left: auto; }
+.card-body { padding: 16px 18px; }
+
+.empty {
+  padding: 60px 24px; text-align: center; color: var(--text-3); font-size: 13px;
+}
+.empty strong { display: block; font-size: 15px; color: var(--text-2); margin-bottom: 8px; font-weight: 500; }
+
+/* progress */
+.prog { display: flex; flex-direction: column; gap: 8px; }
+.prog-bar { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.prog-bar i { display: block; height: 100%; background: var(--brand); width: 0; transition: width .3s; }
+.prog-list { font-size: 12px; color: var(--text-3); font-family: ui-monospace, Consolas, monospace; }
+.prog-list div { padding: 1px 0; }
+
+/* table */
+.tbl-wrap { overflow-x: auto; }
+table.cmp { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.cmp th, table.cmp td {
+  padding: 8px 10px; text-align: right; white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+table.cmp th {
+  text-align: right; font-weight: 600; color: var(--text-2); font-size: 12px;
+  background: var(--surface-2); position: sticky; top: 0; z-index: 1;
+}
+table.cmp td:first-child, table.cmp th:first-child { text-align: left; font-weight: 600; }
+table.cmp td.left, table.cmp th.left { text-align: left; }
+table.cmp tbody tr:hover { background: var(--surface-2); }
+table.cmp tbody tr.dim { color: var(--text-3); }
+
+.score-cell { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+.score-bar { width: 44px; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.score-bar i { display: block; height: 100%; background: var(--brand); }
+
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 12px; font-weight: 500; white-space: nowrap;
+}
+.tag.buy { background: var(--up-soft); color: var(--up); }
+.tag.watch { background: var(--warn-soft); color: var(--warn); }
+.tag.avoid { background: #eef0f3; color: var(--text-2); }
+.tag.err { background: var(--up-soft); color: var(--up); }
+.tag.mode-ban { background: #fdecec; color: #c62828; font-weight: 600; }
+.tag.mode-dip { background: #e8f1fb; color: #1a5fa8; font-weight: 600; }
+
+/* report */
+.report { padding: 4px 22px 24px; }
+.report h1 { font-size: 19px; margin: 20px 0 6px; font-weight: 600; }
+.report h2 {
+  font-size: 15px; margin: 26px 0 10px; font-weight: 600; color: var(--brand);
+  padding-bottom: 6px; border-bottom: 1px solid var(--border);
+}
+.report h3 { font-size: 14px; margin: 18px 0 8px; font-weight: 600; color: var(--text); }
+.report p { margin: 8px 0; }
+.report ul { margin: 8px 0; padding-left: 20px; }
+.report li { margin: 3px 0; }
+.report blockquote {
+  margin: 10px 0; padding: 8px 14px; background: var(--brand-soft);
+  border-left: 3px solid var(--brand); color: var(--text-2); font-size: 13px;
+}
+.report table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+.report th, .report td {
+  border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top;
+}
+.report th { background: var(--surface-2); font-weight: 600; color: var(--text-2); font-size: 12px; }
+.report tbody tr:nth-child(even) { background: var(--surface-2); }
+.report code {
+  background: var(--surface-2); padding: 1px 5px; border-radius: 4px;
+  font-family: ui-monospace, Consolas, monospace; font-size: 12px;
+}
+.report hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+.report strong { font-weight: 600; }
+.report em { color: var(--text-3); font-style: normal; font-size: 12px; }
+
+.report-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.report-tab {
+  padding: 4px 11px; font-size: 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--text-2); transition: .15s;
+}
+.report-tab:hover { border-color: var(--brand); color: var(--brand); }
+.report-tab.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+.actions { margin-left: auto; display: flex; gap: 6px; }
+.btn-sm {
+  padding: 4px 10px; font-size: 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-2);
+}
+.btn-sm:hover { border-color: var(--brand); color: var(--brand); }
+.btn-sm.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn-sm.primary:hover { background: #163d6d; color: #fff; }
+.btn-sm:disabled { opacity: .6; cursor: progress; }
+
+/* ---------------- 图片弹层 ---------------- */
+#imgModal { position: fixed; inset: 0; z-index: 100; }
+.img-modal-mask { position: absolute; inset: 0; background: rgba(15, 22, 33, .55); }
+.img-modal-box {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(820px, 94vw); max-height: 92vh; display: flex; flex-direction: column;
+  background: var(--surface); border-radius: 12px; box-shadow: 0 12px 48px rgba(0,0,0,.3);
+  overflow: hidden;
+}
+.img-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 14px;
+}
+.img-x {
+  border: none; background: transparent; font-size: 22px; line-height: 1; color: var(--text-3);
+  cursor: pointer; padding: 0 4px;
+}
+.img-x:hover { color: var(--text); }
+.img-modal-preview {
+  padding: 14px; overflow: auto; background: #eef1f5; flex: 1; text-align: center;
+}
+.img-modal-preview img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+.img-modal-preview .img-loading { color: var(--text-3); font-size: 13px; padding: 40px 0; }
+.img-modal-foot {
+  display: flex; gap: 8px; justify-content: flex-end; padding: 12px 16px;
+  border-top: 1px solid var(--border); background: var(--surface-2);
+}
+</style></head><body><header><div class="brand"><span class="brand-dot"></span>复盘命中榜单 · 批量交易计划<span>汇总首页（打板/接力 + 低吸/顺势）</span></div><div class="header-meta">生成于 2026-09-08 01:27　|　源报告：复盘报告_综合_20260907.html　|　共 50 只</div></header><div class="card" style="margin:20px 24px 40px;max-width:1600px;"><div class="card-head"><h2>交易计划对比（点击代码查看完整计划）</h2><span class="sub">共 50 只</span></div><div class="card-body tbl-wrap"><table class="cmp"><thead><tr><th class="left">代码</th><th class="">模式</th><th class="">现价</th><th class="">涨停价</th><th class="">评分</th><th class="">建议</th><th class="">连板</th><th class="">封单比</th><th class="">龙虎榜净买</th><th class="">止损价</th><th class="">仓位%</th><th class="">量比</th></tr></thead><tbody><tr><td class="left"><a href="920821_则成电子.html" style="color:var(--brand);text-decoration:none;font-weight:600;">920821 则成电子</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">23.59</td><td class="">23.59</td><td class="">60</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.59%</td><td>1685万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="300112_万讯自控.html" style="color:var(--brand);text-decoration:none;font-weight:600;">300112 万讯自控</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">10.55</td><td class="">10.55</td><td class="">85</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>3.29%</td><td>5529万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="301516_中远通.html" style="color:var(--brand);text-decoration:none;font-weight:600;">301516 中远通</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">19.98</td><td class="">19.98</td><td class="">70</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>2.70%</td><td>1.13亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="688813_泰金新能.html" style="color:var(--brand);text-decoration:none;font-weight:600;">688813 泰金新能</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">122.77</td><td class="">122.77</td><td class="">70</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.73%</td><td>1.54亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="301550_斯菱智驱.html" style="color:var(--brand);text-decoration:none;font-weight:600;">301550 斯菱智驱</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">97.75</td><td class="">97.75</td><td class="">60</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.31%</td><td>-604万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002011_盾安环境.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002011 盾安环境</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">11.94</td><td class="">11.94</td><td class="">65</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.26%</td><td>1.09亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603628_清源股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603628 清源股份</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">10.85</td><td class="">10.85</td><td class="">64</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.64%</td><td>584万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002815_崇达技术.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002815 崇达技术</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">16.01</td><td class="">16.01</td><td class="">55</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.02%</td><td>-3.59亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002988_豪美新材.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002988 豪美新材</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">28.77</td><td class="">28.77</td><td class="">70</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.05%</td><td>8968万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600857_宁波中百.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600857 宁波中百</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">22.86</td><td class="">22.86</td><td class="">55</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.56%</td><td>-2155万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002281_光迅科技.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002281 光迅科技</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">184.47</td><td class="">184.47</td><td class="">70</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.17%</td><td>10.97亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002579_中京电子.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002579 中京电子</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">15.51</td><td class="">15.51</td><td class="">85</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>1.78%</td><td>1.36亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603042_华脉科技.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603042 华脉科技</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">15.43</td><td class="">15.43</td><td class="">60</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>1.34%</td><td>-2083万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="601949_中国出版.html" style="color:var(--brand);text-decoration:none;font-weight:600;">601949 中国出版</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">6.41</td><td class="">6.41</td><td class="">60</td><td><span class="tag watch">谨慎接力</span></td><td class="">2</td><td>0.34%</td><td>-1663万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="688001_华兴源创.html" style="color:var(--brand);text-decoration:none;font-weight:600;">688001 华兴源创</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">58.26</td><td class="">58.26</td><td class="">60</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.07%</td><td>1.03亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600400_红豆股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600400 红豆股份</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">3.15</td><td class="">3.15</td><td class="">73</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.77%</td><td>6501万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002463_沪电股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002463 沪电股份</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">122.65</td><td class="">122.65</td><td class="">67</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.08%</td><td>17.43亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002916_深南电路.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002916 深南电路</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">364.98</td><td class="">364.98</td><td class="">68</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.08%</td><td>5.50亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="605168_三人行.html" style="color:var(--brand);text-decoration:none;font-weight:600;">605168 三人行</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">52.49</td><td class="">52.49</td><td class="">57</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.54%</td><td>-2879万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603926_铁流股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603926 铁流股份</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">18.60</td><td class="">18.60</td><td class="">72</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.59%</td><td>3215万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603999_读者传媒.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603999 读者传媒</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">6.63</td><td class="">6.63</td><td class="">72</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>2.10%</td><td>1792万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002564_天沃科技.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002564 天沃科技</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">5.42</td><td class="">5.42</td><td class="">82</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>1.22%</td><td>5184万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="688655_迅捷兴.html" style="color:var(--brand);text-decoration:none;font-weight:600;">688655 迅捷兴</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">50.52</td><td class="">50.52</td><td class="">80</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>1.06%</td><td>8980万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600103_青山纸业.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600103 青山纸业</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">3.91</td><td class="">3.91</td><td class="">69</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>1.32%</td><td>1.99亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="001330_博纳影业.html" style="color:var(--brand);text-decoration:none;font-weight:600;">001330 博纳影业</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">6.35</td><td class="">6.35</td><td class="">63</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.86%</td><td>2973万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600354_敦煌种业.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600354 敦煌种业</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">9.53</td><td class="">9.53</td><td class="">90</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>1.82%</td><td>1.33亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="601086_国芳集团.html" style="color:var(--brand);text-decoration:none;font-weight:600;">601086 国芳集团</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">13.92</td><td class="">13.92</td><td class="">80</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>1.51%</td><td>3544万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="000428_华天酒店.html" style="color:var(--brand);text-decoration:none;font-weight:600;">000428 华天酒店</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">5.16</td><td class="">5.16</td><td class="">70</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>0.83%</td><td>-251万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002708_光洋股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002708 光洋股份</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">16.80</td><td class="">16.80</td><td class="">74</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.99%</td><td>1.64亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603395_红四方.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603395 红四方</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">29.77</td><td class="">29.77</td><td class="">80</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>1.83%</td><td>7245万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002980_华盛昌.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002980 华盛昌</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">118.10</td><td class="">118.10</td><td class="">80</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>1.05%</td><td>2.58亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002436_兴森科技.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002436 兴森科技</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">36.75</td><td class="">36.75</td><td class="">75</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.46%</td><td>5.93亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002484_江海股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002484 江海股份</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">61.95</td><td class="">61.95</td><td class="">70</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.14%</td><td>4.61亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603228_景旺电子.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603228 景旺电子</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">105.97</td><td class="">105.97</td><td class="">63</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>0.17%</td><td>10.36亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="603696_安记食品.html" style="color:var(--brand);text-decoration:none;font-weight:600;">603696 安记食品</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">16.64</td><td class="">16.64</td><td class="">85</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>1.17%</td><td>7740万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="000798_中水渔业.html" style="color:var(--brand);text-decoration:none;font-weight:600;">000798 中水渔业</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">11.15</td><td class="">11.15</td><td class="">85</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>2.20%</td><td>3196万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600108_亚盛集团.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600108 亚盛集团</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">4.80</td><td class="">4.80</td><td class="">83</td><td><span class="tag buy">打板/接力</span></td><td class="">3</td><td>4.86%</td><td>2739万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600865_百大集团.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600865 百大集团</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">12.49</td><td class="">12.49</td><td class="">97</td><td><span class="tag buy">打板/接力</span></td><td class="">3</td><td>7.84%</td><td>5871万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="605577_龙版传媒.html" style="color:var(--brand);text-decoration:none;font-weight:600;">605577 龙版传媒</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">17.11</td><td class="">17.11</td><td class="">63</td><td><span class="tag watch">谨慎接力</span></td><td class="">6</td><td>1.47%</td><td>1191万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="001366_播恩集团.html" style="color:var(--brand);text-decoration:none;font-weight:600;">001366 播恩集团</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">15.80</td><td class="">15.80</td><td class="">97</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>12.93%</td><td>6402万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="601595_上海电影.html" style="color:var(--brand);text-decoration:none;font-weight:600;">601595 上海电影</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">20.63</td><td class="">20.63</td><td class="">72</td><td><span class="tag buy">打板/接力</span></td><td class="">1</td><td>0.60%</td><td>2836万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="002702_海欣食品.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002702 海欣食品</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">6.17</td><td class="">6.17</td><td class="">93</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>5.94%</td><td>6823万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="000735_罗 牛 山.html" style="color:var(--brand);text-decoration:none;font-weight:600;">000735 罗 牛 山</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">6.74</td><td class="">6.74</td><td class="">82</td><td><span class="tag buy">打板/接力</span></td><td class="">2</td><td>1.15%</td><td>1.41亿</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="600280_中央商场.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600280 中央商场</a></td><td><span class="tag mode-ban">打板/接力</span></td><td class="">3.43</td><td class="">3.43</td><td class="">62</td><td><span class="tag watch">谨慎接力</span></td><td class="">1</td><td>1.07%</td><td>-3749万</td><td class="">—</td><td class="">—</td><td class="">—</td></tr><tr><td class="left"><a href="301119_正强股份.html" style="color:var(--brand);text-decoration:none;font-weight:600;">301119 正强股份</a></td><td><span class="tag mode-dip">低吸/顺势</span></td><td class="">28.79</td><td class="">—</td><td class="">88</td><td><span class="tag buy">买入</span></td><td class="">0</td><td>—</td><td>—</td><td class="">28.07</td><td class="">—</td><td class="">1.62</td></tr><tr><td class="left"><a href="300857_协创数据.html" style="color:var(--brand);text-decoration:none;font-weight:600;">300857 协创数据</a></td><td><span class="tag mode-dip">低吸/顺势</span></td><td class="">274.03</td><td class="">—</td><td class="">83</td><td><span class="tag buy">买入</span></td><td class="">0</td><td>—</td><td>—</td><td class="">267.18</td><td class="">—</td><td class="">1.45</td></tr><tr><td class="left"><a href="301489_思泉新材.html" style="color:var(--brand);text-decoration:none;font-weight:600;">301489 思泉新材</a></td><td><span class="tag mode-dip">低吸/顺势</span></td><td class="">138.91</td><td class="">—</td><td class="">81</td><td><span class="tag buy">买入</span></td><td class="">0</td><td>—</td><td>—</td><td class="">135.44</td><td class="">—</td><td class="">1.34</td></tr><tr><td class="left"><a href="600737_中粮糖业.html" style="color:var(--brand);text-decoration:none;font-weight:600;">600737 中粮糖业</a></td><td><span class="tag mode-dip">低吸/顺势</span></td><td class="">16.51</td><td class="">—</td><td class="">80</td><td><span class="tag buy">买入</span></td><td class="">0</td><td>—</td><td>—</td><td class="">16.10</td><td class="">—</td><td class="">1.39</td></tr><tr><td class="left"><a href="002652_扬子新材.html" style="color:var(--brand);text-decoration:none;font-weight:600;">002652 扬子新材</a></td><td><span class="tag mode-dip">低吸/顺势</span></td><td class="">4.41</td><td class="">—</td><td class="">85</td><td><span class="tag buy">买入</span></td><td class="">0</td><td>—</td><td>—</td><td class="">4.30</td><td class="">—</td><td class="">1.76</td></tr><tr><td class="left"><a href="301310_鑫宏业.html" style="color:var(--brand);text-decoration:none;font-weight:600;">301310 鑫宏业</a></td><td><span class="tag mode-dip">低吸/顺势</span></td><td class="">58.01</td><td class="">—</td><td class="">79</td><td><span class="tag buy">买入</span></td><td class="">0</td><td>—</td><td>—</td><td class="">56.56</td><td class="">—</td><td class="">1.38</td></tr></tbody></table></div></div><div class="footer" style="text-align:center;color:var(--text-3);font-size:12px;padding:10px 0 30px;">由 A股GOGOGO 第二版（纯前端版）批量生成 · 打板/接力与低吸/顺势双模式 · 本计划仅基于历史价量数据，不构成投资建议</div></body></html>
