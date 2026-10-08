@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20260930 交易计划总结报告</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--border:#e3e7ed;--text:#1b2330;--text-2:#5b6675;--text-3:#8a94a3;
+--brand:#1d4e89;--brand-soft:#eaf1f9;--up:#c62828;--up-soft:#fdecec;--down:#1b7a4b;--down-soft:#e8f5ee;
+--warn:#9a6205;--warn-soft:#fdf3e0;--radius:10px;--shadow:0 1px 2px rgba(20,30,45,.04),0 4px 16px rgba(20,30,45,.05)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;
+align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.brand{font-size:17px;font-weight:600;letter-spacing:.2px}.brand span{color:var(--text-3);font-weight:400;font-size:13px;margin-left:8px}
+.header-meta{margin-left:auto;font-size:12px;color:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.panel-h{padding:13px 20px;border-bottom:1px solid var(--border);background:var(--surface-2);
+font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-h .no{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--brand);
+color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:600}
+.panel-b{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:right;font-weight:600;color:var(--text-2);font-size:12px;background:var(--surface-2)}
+td:first-child,th:first-child{text-align:left;font-weight:600}
+.up{color:var(--up)}.down{color:var(--down)}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:1px 2px;
+background:var(--brand-soft);color:var(--brand)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag.buy{background:var(--up-soft);color:var(--up)}
+.tag.watch{background:var(--warn-soft);color:var(--warn)}
+.tag.mode-ban{background:#fdecec;color:#c62828;font-weight:600}
+.tag.mode-dip{background:#e8f1fb;color:#1a5fa8;font-weight:600}
+.tag.theme{background:var(--brand-soft);color:var(--brand);border:1px solid #cfe0f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 4px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.kpi .k{font-size:12px;color:var(--text-3)}.kpi .v{font-size:17px;font-weight:600;margin-top:3px}
+.kpi .v.up{color:var(--up)}.kpi .v.down{color:var(--down)}
+.narrative{background:var(--brand-soft);border-left:3px solid var(--brand);padding:10px 14px;
+border-radius:0 8px 8px 0;color:var(--text-2);font-size:13px;margin:10px 0}
+.focus-card{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.focus-head{padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);
+display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--up);color:#fff;
+font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.focus-name{font-size:15px;font-weight:600;color:var(--brand);text-decoration:none}
+.focus-score{margin-left:auto;font-size:12px;color:var(--text-2);font-weight:600}
+.focus-meta{padding:8px 16px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-2);background:#fff}
+.reasons{margin:0;padding:6px 16px 8px 34px;font-size:13px}
+.reasons li{margin:4px 0}
+.focus-link{padding:0 16px 10px;font-size:12px}
+.focus-link a{color:var(--brand);text-decoration:none;font-weight:500}
+.note{font-size:12px;color:var(--text-3);margin-top:8px}
+.core{font-size:13px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);
+border-radius:8px;padding:10px 14px;margin:6px 0}
+</style></head><body>
+<header><div class="brand">📊 交易计划 · 当日总结报告<span>20260930</span></div>
+<div class="header-meta">生成于 2026-10-04 20:22　|　源报告：复盘报告_综合_20260930.html</div></header>
+<div class="wrap">
+
+<div class="panel"><div class="panel-h"><span class="no">一</span>当日大盘走势总结</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">上证指数</div><div class="v up">+0.31%</div><div class="k">3842.19 · 6794亿</div></div><div class="kpi"><div class="k">深证成指</div><div class="v down">-0.11%</div><div class="k">12887.62 · 7586亿</div></div><div class="kpi"><div class="k">创业板指</div><div class="v down">-0.23%</div><div class="k">3135.28 · 3662亿</div></div><div class="kpi"><div class="k">北证50</div><div class="v up">+0.70%</div><div class="k">1039.61 · 122亿</div></div><div class="kpi"><div class="k">沪深300</div><div class="v up">+0.29%</div><div class="k">4357.62 · 3565亿</div></div><div class="kpi"><div class="k">科创50</div><div class="v down">-2.51%</div><div class="k">1530.01 · 719亿</div></div>
+</div>
+<div class="narrative">上证指数收 +0.31%，深证成指 -0.11%，创业板指 -0.23%，北证50 +0.70%（逆势走强），科创50 -2.51%（跌幅最深）。沪强深弱、权重相对抗跌，成长科技（科创/创业板）明显承压，市场呈结构性分化。北证50 逆势上涨，资金偏好北交所小市值题材股，短线情绪并未全面熄火。两市合计成交约 1.44 万亿，量能温和。</div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3842.19</td><td class="up">+0.31%</td><td>6794 亿</td></tr><tr><td>深证成指</td><td>12887.62</td><td class="down">-0.11%</td><td>7586 亿</td></tr><tr><td>创业板指</td><td>3135.28</td><td class="down">-0.23%</td><td>3662 亿</td></tr><tr><td>北证50</td><td>1039.61</td><td class="up">+0.70%</td><td>122 亿</td></tr><tr><td>沪深300</td><td>4357.62</td><td class="up">+0.29%</td><td>3565 亿</td></tr><tr><td>科创50</td><td>1530.01</td><td class="down">-2.51%</td><td>719 亿</td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">二</span>大盘情绪（短线情绪周期 · 持仓周期按个股自适配）</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">情绪周期</div><div class="v up">发酵期</div><div class="k">综合评分 4</div></div>
+  <div class="kpi"><div class="k">涨停 / 跌停</div><div class="v">52 / 9</div><div class="k">涨停池 / 跌停池</div></div>
+  <div class="kpi"><div class="k">炸板率</div><div class="v up">19%</div><div class="k">炸板 / (涨停+炸板)</div></div>
+  <div class="kpi"><div class="k">涨 / 跌家数</div><div class="v">2470 / 2747</div><div class="k">全市场广度</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">7 板</div><div class="k">空间高度</div></div>
+</div>
+<div class="narrative"><span class="chip" style="margin:2px">涨停 52 家，情绪发酵</span><span class="chip" style="margin:2px">炸板率 19%，封板坚决</span><span class="chip" style="margin:2px">涨跌家数 2470 / 2747，偏空</span><span class="chip" style="margin:2px">跌停 9 家，正常</span><span class="chip" style="margin:2px">最高 7 板，高度打开</span></div>
+<div class="narrative"><b>接力晋级（前日 → 今日）：</b>前日（2026-09-29）命中 46 只 → 今日仍命中 8 只（保持率 17.4%），其中涨停 8 只（涨停转化 17.4%）：<span class="chip">善水科技</span><span class="chip">深物业A</span><span class="chip">均瑶健康</span><span class="chip">时代万恒</span><span class="chip">亚邦股份</span>。短线接力赚钱效应良好，可积极参与。</div>
+<div class="core"><b>短线操作建议（持仓周期按个股资金流自动区分 1-2 天 / 3-5 天）：</b>情绪回暖，可重点打板 / 接力主线龙头；持仓周期按个股资金流自动区分——资金连续净流入可持有 3-5 天，短线脉冲则 1-2 天次日溢价兑现。首板可试错。</div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">三</span>盘面特征与主线</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">当日涨停</div><div class="v up">52 家</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">7 板</div></div>
+  <div class="kpi"><div class="k">生成计划</div><div class="v">34 只</div></div>
+</div>
+<table><thead><tr><th>连板梯队</th><th>家数</th></tr></thead><tbody><tr><td>7 板</td><td>1 家</td></tr><tr><td>4 板</td><td>1 家</td></tr><tr><td>3 板</td><td>4 家</td></tr><tr><td>2 板</td><td>6 家</td></tr><tr><td>1 板</td><td>40 家</td></tr></tbody></table>
+<div class="core"><b>复盘核心结论：</b>今日信号较强，命中 41 只；主线：CRO（舆情 5 分·极热·偏正面）；资金聚焦：创新药（主力净流入 +41.51 亿）；前日（2026-09-29）命中 46 只 → 今日仍命中 8 只，其中涨停 8 只（善水科技、深物业A、均瑶健康、时代万恒、亚邦股份）。</div>
+<div class="note"><b>舆情热点：</b><span class="chip">CRO（5 分·极热·偏正面）</span><span class="chip">创新药（5 分·极热·偏正面）</span><span class="chip">减肥药（4 分·高热·偏正面）</span></div>
+<h3 style="margin:14px 0 6px;font-size:14px">板块资金流 TOP10（主力净流入 + 舆情热度）</h3>
+<table><thead><tr><th>#</th><th>板块</th><th>主力净流入</th><th>涨跌幅</th><th>舆情</th><th>领涨股</th></tr></thead><tbody><tr><td>1</td><td><b>CRO</b></td><td class="up">+27.27亿</td><td class="up">+3.80%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">康希诺</span></td></tr><tr><td>2</td><td><b>创新药</b></td><td class="up">+41.51亿</td><td class="up">+2.74%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">康辰药业</span></td></tr><tr><td>3</td><td><b>减肥药</b></td><td class="up">+15.40亿</td><td class="up">+2.87%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">美诺华</span></td></tr><tr><td>4</td><td><b>AH股</b></td><td class="up">+21.43亿</td><td class="up">+0.80%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">康希诺</span></td></tr><tr><td>5</td><td><b>茅指数</b></td><td class="up">+16.39亿</td><td class="up">+1.32%</td><td>2 分 · 微热·中性</td><td><span class="chip">智飞生物</span></td></tr><tr><td>6</td><td><b>创新医疗服务</b></td><td class="up">+23.66亿</td><td class="up">+1.50%</td><td>1 分 · 低热·偏正面</td><td><span class="chip">昭衍新药</span></td></tr><tr><td>7</td><td><b>医药医疗风格</b></td><td class="up">+37.90亿</td><td class="up">+2.92%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">康希诺</span></td></tr><tr><td>8</td><td><b>病原体防治</b></td><td class="up">+23.50亿</td><td class="up">+2.63%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">均瑶健康</span></td></tr><tr><td>9</td><td><b>电商概念</b></td><td class="up">+18.41亿</td><td class="up">+0.30%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">新华传媒</span></td></tr><tr><td>10</td><td><b>宁组合</b></td><td class="up">+15.49亿</td><td class="up">+1.81%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">昭衍新药</span></td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">四</span>最佳推荐排行榜 TOP8（按综合分排序 · 含入选理由）</div><div class="panel-b">
+<div class="note" style="margin-bottom:6px">筛选逻辑：评分 / 连板梯队 / 封单比 / 龙虎榜净买 / 题材命中当日主线（CRO、创新药、减肥药）综合排序，双轮策略（题材代表优先 + 高分核心填充）。重点关注：301190、002242、600825、300981、300890、605303、605388、603188</div>
+<div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">1</span>
+        <a href="301190_善水科技.html" class="focus-name">301190 善水科技</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 85（综合 102）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 35.93</span><span>涨停价 35.93</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>3 连板</span>
+        <span>封单比 1.63%</span>
+        <span>龙虎榜 2464万</span>
+        
+        
+        <span class="tag theme">近期新高</span><span class="tag theme">昨日打二板以上表现</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「近期新高、昨日打二板以上表现、东方财富热股」，资金与舆情共振</li><li>3 连板，处于当日连板梯队中位</li><li>封单比 1.63%（封板较稳）</li><li>龙虎榜净买 2464万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="301190_善水科技.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">2</span>
+        <a href="002242_九阳股份.html" class="focus-name">002242 九阳股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 82（综合 99）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 12.50</span><span>涨停价 12.50</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>3 连板</span>
+        <span>封单比 1.73%</span>
+        <span>龙虎榜 3898万</span>
+        
+        
+        <span class="tag theme">趋势股</span><span class="tag theme">近期新高</span><span class="tag theme">昨日打二板以上表现</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「趋势股、近期新高、昨日打二板以上表现」，资金与舆情共振</li><li>3 连板，处于当日连板梯队中位</li><li>封单比 1.73%（封板较稳）</li><li>龙虎榜净买 3898万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="002242_九阳股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">3</span>
+        <a href="600825_新华传媒.html" class="focus-name">600825 新华传媒</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 79（综合 98）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 10.35</span><span>涨停价 10.35</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>7 连板</span>
+        <span>封单比 18.39%</span>
+        <span>龙虎榜 9204万</span>
+        
+        
+        <span class="tag theme">电商概念</span><span class="tag theme">趋势股</span><span class="tag theme">近期新高</span><span class="tag theme">昨日打二板以上表现</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「电商概念、趋势股、近期新高、昨日打二板以上表现」，当日板块主力净流入 +18.41亿（+0.30%，热度 1 分 冷·无舆情）</li><li>7 连板，处于当日连板梯队高位</li><li>封单比 18.39%（封板资金锁定较强）</li><li>龙虎榜净买 9204万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="600825_新华传媒.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">4</span>
+        <a href="300981_中红医疗.html" class="focus-name">300981 中红医疗</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 92（综合 96）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 20.30</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        
+        
+        
+        <span>止损 19.55</span>
+        
+        <span class="tag theme">近期新高</span><span class="tag theme">东方财富热股</span><span class="tag theme">医疗器械概念</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「近期新高、东方财富热股、医疗器械概念」，资金与舆情共振</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="300981_中红医疗.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">5</span>
+        <a href="300890_翔丰华.html" class="focus-name">300890 翔丰华</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 89（综合 93）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 28.88</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        
+        
+        
+        <span>止损 28.16</span>
+        
+        <span class="tag theme">固态电池</span><span class="tag theme">电力设备</span><span class="tag theme">电池</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「固态电池、电力设备、电池」，资金与舆情共振</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="300890_翔丰华.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">6</span>
+        <a href="605303_园林股份.html" class="focus-name">605303 园林股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 78（综合 95）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 28.66</span><span>涨停价 28.66</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        <span>2 连板</span>
+        <span>封单比 3.78%</span>
+        <span>龙虎榜 385万</span>
+        
+        
+        <span class="tag theme">近期新高</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「近期新高、东方财富热股」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 3.78%（封板资金锁定较强）</li><li>龙虎榜净买 385万，有资金进场痕迹</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="605303_园林股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">7</span>
+        <a href="605388_均瑶健康.html" class="focus-name">605388 均瑶健康</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 78（综合 93）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 7.39</span><span>涨停价 7.39</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>2 连板</span>
+        <span>封单比 1.74%</span>
+        <span>龙虎榜 1091万</span>
+        
+        
+        <span class="tag theme">病原体防治</span><span class="tag theme">破发股</span><span class="tag theme">近期新高</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「病原体防治、破发股、近期新高、东方财富热股」，当日板块主力净流入 +23.50亿（+2.63%，热度 1 分 冷·无舆情）</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 1.74%（封板较稳）</li><li>龙虎榜净买 1091万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="605388_均瑶健康.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">8</span>
+        <a href="603188_亚邦股份.html" class="focus-name">603188 亚邦股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 80（综合 92）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 5.40</span><span>涨停价 5.40</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>2 连板</span>
+        <span>封单比 0.86%</span>
+        <span>龙虎榜 2065万</span>
+        
+        
+        <span class="tag theme">破发股</span><span class="tag theme">近期新高</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「破发股、近期新高、东方财富热股」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 0.86%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 2065万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：发酵期（综合 4 分），打板/接力可适度参与主线核心，资金连续净流入者按 3-5 天波段持有、脉冲式流入者 1-2 天兑现</li></ul>
+      <div class="focus-link"><a href="603188_亚邦股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">五</span>操作提示与风险（按个股资金流自动区分持仓周期）</div><div class="panel-b">
+<ul style="margin:0;padding-left:20px;font-size:13px">
+<li><b>持仓周期按个股资金流自动切换</b>：资金持续性差/单日脉冲 → <b>1-2 天</b>（次日 T+1 溢价兑现，不恋战）；连续 3-5 日主力净流入且超大单/机构持续买入 → <b>3-5 天</b>（波段持有，3 日不见效减半、5 日到期无条件清仓）。各股具体周期见个股计划「持仓周期」字段。</li>
+<li>大盘情绪「发酵期」：情绪回暖，可重点打板 / 接力主线龙头；持仓周期按个股资金流自动区分——资金连续净流入可持有 3-5 天，短线脉冲则 1-2 天次日溢价兑现。首板可试错。</li>
+<li>短线情绪靠题材维系（CRO、创新药、减肥药主线），打板接力优先主线龙头与高封单品种。</li>
+<li>连板高位股注意炸板与分歧风险；龙虎榜净卖的个股留意获利盘抛压；A股 T+1 规则——当日买入当日不可卖，止损最早买入次日执行。</li>
+<li>以上为数据模型建议，不构成投资建议；实际买卖请结合次日竞价与个人风控。</li>
+</ul>
+</div></div>
+
+</div></body></html>
