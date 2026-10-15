@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261009 交易计划总结报告</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--border:#e3e7ed;--text:#1b2330;--text-2:#5b6675;--text-3:#8a94a3;
+--brand:#1d4e89;--brand-soft:#eaf1f9;--up:#c62828;--up-soft:#fdecec;--down:#1b7a4b;--down-soft:#e8f5ee;
+--warn:#9a6205;--warn-soft:#fdf3e0;--radius:10px;--shadow:0 1px 2px rgba(20,30,45,.04),0 4px 16px rgba(20,30,45,.05)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;
+align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.brand{font-size:17px;font-weight:600;letter-spacing:.2px}.brand span{color:var(--text-3);font-weight:400;font-size:13px;margin-left:8px}
+.header-meta{margin-left:auto;font-size:12px;color:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.panel-h{padding:13px 20px;border-bottom:1px solid var(--border);background:var(--surface-2);
+font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-h .no{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--brand);
+color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:600}
+.panel-b{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:right;font-weight:600;color:var(--text-2);font-size:12px;background:var(--surface-2)}
+td:first-child,th:first-child{text-align:left;font-weight:600}
+.up{color:var(--up)}.down{color:var(--down)}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:1px 2px;
+background:var(--brand-soft);color:var(--brand)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag.buy{background:var(--up-soft);color:var(--up)}
+.tag.watch{background:var(--warn-soft);color:var(--warn)}
+.tag.mode-ban{background:#fdecec;color:#c62828;font-weight:600}
+.tag.mode-dip{background:#e8f1fb;color:#1a5fa8;font-weight:600}
+.tag.theme{background:var(--brand-soft);color:var(--brand);border:1px solid #cfe0f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 4px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.kpi .k{font-size:12px;color:var(--text-3)}.kpi .v{font-size:17px;font-weight:600;margin-top:3px}
+.kpi .v.up{color:var(--up)}.kpi .v.down{color:var(--down)}
+.narrative{background:var(--brand-soft);border-left:3px solid var(--brand);padding:10px 14px;
+border-radius:0 8px 8px 0;color:var(--text-2);font-size:13px;margin:10px 0}
+.focus-card{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.focus-head{padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);
+display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--up);color:#fff;
+font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.focus-name{font-size:15px;font-weight:600;color:var(--brand);text-decoration:none}
+.focus-score{margin-left:auto;font-size:12px;color:var(--text-2);font-weight:600}
+.focus-meta{padding:8px 16px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-2);background:#fff}
+.reasons{margin:0;padding:6px 16px 8px 34px;font-size:13px}
+.reasons li{margin:4px 0}
+.focus-link{padding:0 16px 10px;font-size:12px}
+.focus-link a{color:var(--brand);text-decoration:none;font-weight:500}
+.note{font-size:12px;color:var(--text-3);margin-top:8px}
+.core{font-size:13px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);
+border-radius:8px;padding:10px 14px;margin:6px 0}
+</style></head><body>
+<header><div class="brand">📊 交易计划 · 当日总结报告<span>20261009</span></div>
+<div class="header-meta">生成于 2026-10-11 19:35　|　源报告：复盘报告_综合_20261009.html</div></header>
+<div class="wrap">
+
+<div class="panel"><div class="panel-h"><span class="no">一</span>当日大盘走势总结</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">上证指数</div><div class="v up">+0.05%</div><div class="k">3813.79 · 8886亿</div></div><div class="kpi"><div class="k">深证成指</div><div class="v up">+0.17%</div><div class="k">12641.86 · 10120亿</div></div><div class="kpi"><div class="k">创业板指</div><div class="v up">+0.22%</div><div class="k">3043.33 · 4920亿</div></div><div class="kpi"><div class="k">北证50</div><div class="v up">+2.49%</div><div class="k">1037.31 · 163亿</div></div><div class="kpi"><div class="k">沪深300</div><div class="v up">+0.16%</div><div class="k">4317.25 · 4962亿</div></div><div class="kpi"><div class="k">科创50</div><div class="v up">+0.07%</div><div class="k">1457.27 · 920亿</div></div>
+</div>
+<div class="narrative">上证指数收 +0.05%，深证成指 +0.17%，创业板指 +0.22%，北证50 +2.49%（逆势走强），科创50 +0.07%（跌幅最深）。北证50 逆势上涨，资金偏好北交所小市值题材股，短线情绪并未全面熄火。两市合计成交约 1.90 万亿，量能温和。</div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3813.79</td><td class="up">+0.05%</td><td>8886 亿</td></tr><tr><td>深证成指</td><td>12641.86</td><td class="up">+0.17%</td><td>10120 亿</td></tr><tr><td>创业板指</td><td>3043.33</td><td class="up">+0.22%</td><td>4920 亿</td></tr><tr><td>北证50</td><td>1037.31</td><td class="up">+2.49%</td><td>163 亿</td></tr><tr><td>沪深300</td><td>4317.25</td><td class="up">+0.16%</td><td>4962 亿</td></tr><tr><td>科创50</td><td>1457.27</td><td class="up">+0.07%</td><td>920 亿</td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">二</span>大盘情绪（短线情绪周期 · 持仓周期按个股自适配）</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">情绪周期</div><div class="v up">高潮期</div><div class="k">综合评分 5</div></div>
+  <div class="kpi"><div class="k">涨停 / 跌停</div><div class="v">69 / 8</div><div class="k">涨停池 / 跌停池</div></div>
+  <div class="kpi"><div class="k">炸板率</div><div class="v up">17%</div><div class="k">炸板 / (涨停+炸板)</div></div>
+  <div class="kpi"><div class="k">涨 / 跌家数</div><div class="v">3212 / 2047</div><div class="k">全市场广度</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">9 板</div><div class="k">空间高度</div></div>
+</div>
+<div class="narrative"><span class="chip" style="margin:2px">涨停 69 家，情绪发酵</span><span class="chip" style="margin:2px">炸板率 17%，封板坚决</span><span class="chip" style="margin:2px">涨跌家数 3212 / 2047，偏多</span><span class="chip" style="margin:2px">跌停 8 家，正常</span><span class="chip" style="margin:2px">最高 9 板，高度打开</span></div>
+<div class="narrative"><b>接力晋级（前日 → 今日）：</b>前日（2026-10-08）命中 38 只 → 今日仍命中 10 只（保持率 26.3%），其中涨停 9 只（涨停转化 23.7%）：<span class="chip">领湃科技</span><span class="chip">安泰集团</span><span class="chip">时代万恒</span><span class="chip">九阳股份</span><span class="chip">新华传媒</span>。短线接力赚钱效应良好，可积极参与。</div>
+<div class="core"><b>短线操作建议（持仓周期按个股资金流自动区分 1-2 天 / 3-5 天）：</b>情绪亢奋，短线可积极打板 / 接力主线龙头；持仓周期以各股计划为准（资金持续流入走 3-5 天波段，脉冲式流入则 1-2 天兑现）。高潮后易现分歧，次日竞价不及预期须快速兑现，忌追高位尾盘板。</div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">三</span>盘面特征与主线</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">当日涨停</div><div class="v up">69 家</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">9 板</div></div>
+  <div class="kpi"><div class="k">生成计划</div><div class="v">45 只</div></div>
+</div>
+<table><thead><tr><th>连板梯队</th><th>家数</th></tr></thead><tbody><tr><td>9 板</td><td>1 家</td></tr><tr><td>5 板</td><td>2 家</td></tr><tr><td>4 板</td><td>1 家</td></tr><tr><td>2 板</td><td>8 家</td></tr><tr><td>1 板</td><td>57 家</td></tr></tbody></table>
+<div class="core"><b>复盘核心结论：</b>今日信号密集，命中 57 只为阶段高位；主线：固态电池（舆情 5 分·极热·偏正面）；资金聚焦：固态电池（主力净流入 +48.15 亿）；前日（2026-10-08）命中 38 只 → 今日仍命中 10 只，其中涨停 9 只（领湃科技、安泰集团、时代万恒、九阳股份、新华传媒）。</div>
+<div class="note"><b>舆情热点：</b><span class="chip">固态电池（5 分·极热·偏正面）</span><span class="chip">AI应用（5 分·极热·偏正面）</span><span class="chip">钠离子电池（4 分·高热·偏正面）</span></div>
+<h3 style="margin:14px 0 6px;font-size:14px">板块资金流 TOP10（主力净流入 + 舆情热度）</h3>
+<table><thead><tr><th>#</th><th>板块</th><th>主力净流入</th><th>涨跌幅</th><th>舆情</th><th>领涨股</th></tr></thead><tbody><tr><td>1</td><td><b>固态电池</b></td><td class="up">+48.15亿</td><td class="up">+0.60%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">紫竹高科</span></td></tr><tr><td>2</td><td><b>AI应用</b></td><td class="up">+29.91亿</td><td class="up">+3.16%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">丽人丽妆</span></td></tr><tr><td>3</td><td><b>钠离子电池</b></td><td class="up">+42.60亿</td><td class="up">+1.24%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">雄韬股份</span></td></tr><tr><td>4</td><td><b>黄金概念</b></td><td class="up">+33.96亿</td><td class="up">+2.42%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">西部黄金</span></td></tr><tr><td>5</td><td><b>锂电池概念</b></td><td class="up">+31.97亿</td><td class="up">+0.57%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">时代万恒</span></td></tr><tr><td>6</td><td><b>动力电池回收</b></td><td class="up">+43.61亿</td><td class="up">+1.66%</td><td>2 分 · 微热·中性</td><td><span class="chip">雄韬股份</span></td></tr><tr><td>7</td><td><b>周期股</b></td><td class="up">+32.78亿</td><td class="up">+0.72%</td><td>2 分 · 微热·偏正面</td><td><span class="chip">天赐材料</span></td></tr><tr><td>8</td><td><b>麒麟电池</b></td><td class="up">+26.42亿</td><td class="up">+0.76%</td><td>1 分 · 低热·中性</td><td><span class="chip">瑞泰新材</span></td></tr><tr><td>9</td><td><b>锂矿概念</b></td><td class="up">+43.50亿</td><td class="up">+1.75%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">科力远</span></td></tr><tr><td>10</td><td><b>小金属概念</b></td><td class="up">+27.21亿</td><td class="up">+1.09%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">西部黄金</span></td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">四</span>最佳推荐排行榜 TOP8（按综合分排序 · 含入选理由）</div><div class="panel-b">
+<div class="note" style="margin-bottom:6px">筛选逻辑：评分 / 连板梯队 / 封单比 / 龙虎榜净买 / 题材命中当日主线（固态电池、AI应用、钠离子电池）综合排序，双轮策略（题材代表优先 + 高分核心填充）。重点关注：002733、002805、300805、001336、688806、301238、600812、688399</div>
+<div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">1</span>
+        <a href="002733_雄韬股份.html" class="focus-name">002733 雄韬股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 90（综合 105）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 20.78</span><span>涨停价 20.78</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>2 连板</span>
+        <span>封单比 2.58%</span>
+        <span>龙虎榜 1.57亿</span>
+        
+        
+        <span class="tag theme">钠离子电池</span><span class="tag theme">动力电池回收</span><span class="tag theme">最近多板</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「钠离子电池、动力电池回收、最近多板、东方财富热股」，当日板块主力净流入 +42.60亿（+1.24%，热度 4 分 高热·偏正面）</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 2.58%（封板较稳）</li><li>龙虎榜净买 1.57亿，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="002733_雄韬股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">2</span>
+        <a href="002805_丰元股份.html" class="focus-name">002805 丰元股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 85（综合 100）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 19.44</span><span>涨停价 19.44</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>2 连板</span>
+        <span>封单比 1.63%</span>
+        <span>龙虎榜 4028万</span>
+        
+        
+        <span class="tag theme">2026中报扭亏</span><span class="tag theme">最近多板</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「2026中报扭亏、最近多板、东方财富热股」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 1.63%（封板较稳）</li><li>龙虎榜净买 4028万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="002805_丰元股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">3</span>
+        <a href="300805_电声股份.html" class="focus-name">300805 电声股份</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 95（综合 99）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 9.10</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        
+        
+        
+        <span>止损 8.60</span>
+        
+        <span class="tag theme">破发股</span><span class="tag theme">网红经济</span><span class="tag theme">电商概念</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「破发股、网红经济、电商概念」，资金与舆情共振</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="300805_电声股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">4</span>
+        <a href="001336_楚环科技.html" class="focus-name">001336 楚环科技</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 80（综合 93）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 22.72</span><span>涨停价 22.72</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        <span>2 连板</span>
+        <span>封单比 23.02%</span>
+        <span>龙虎榜 -2132万</span>
+        
+        
+        <span class="tag theme">最近多板</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「最近多板、东方财富热股」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 23.02%（封板资金锁定较强）</li><li>龙虎榜净卖 -2132万，注意获利盘抛压</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="001336_楚环科技.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">5</span>
+        <a href="688806_泰诺麦博-U.html" class="focus-name">688806 泰诺麦博-U</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 88（综合 92）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 30.34</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        
+        
+        
+        <span>止损 29.01</span>
+        
+        <span class="tag theme">最近多板</span><span class="tag theme">婴童概念</span><span class="tag theme">医药生物</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「最近多板、婴童概念、医药生物」，资金与舆情共振</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="688806_泰诺麦博-U.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">6</span>
+        <a href="301238_瑞泰新材.html" class="focus-name">301238 瑞泰新材</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 88（综合 92）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 17.43</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        
+        
+        
+        <span>止损 16.88</span>
+        
+        <span class="tag theme">麒麟电池</span><span class="tag theme">破发股</span><span class="tag theme">电池技术</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「麒麟电池、破发股、电池技术」，当日板块主力净流入 +26.42亿（+0.76%，热度 1 分 低热·中性）</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="301238_瑞泰新材.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">7</span>
+        <a href="600812_华北制药.html" class="focus-name">600812 华北制药</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 80（综合 92）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 6.03</span><span>涨停价 6.03</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>2 连板</span>
+        <span>封单比 1.15%</span>
+        <span>龙虎榜 4216万</span>
+        
+        
+        <span class="tag theme">最近多板</span><span class="tag theme">东方财富热股</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「最近多板、东方财富热股」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 1.15%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 4216万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="600812_华北制药.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">8</span>
+        <a href="688399_硕世生物.html" class="focus-name">688399 硕世生物</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 87（综合 91）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 29.92</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        
+        
+        
+        <span>止损 29.17</span>
+        
+        <span class="tag theme">病原体防治</span><span class="tag theme">流感</span><span class="tag theme">医药生物</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「病原体防治、流感、医药生物」，资金与舆情共振</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 5 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="688399_硕世生物.html" target="_blank">查看完整交易计划 →</a></div>
+    </div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">五</span>操作提示与风险（按个股资金流自动区分持仓周期）</div><div class="panel-b">
+<ul style="margin:0;padding-left:20px;font-size:13px">
+<li><b>持仓周期按个股资金流自动切换</b>：资金持续性差/单日脉冲 → <b>1-2 天</b>（次日 T+1 溢价兑现，不恋战）；连续 3-5 日主力净流入且超大单/机构持续买入 → <b>3-5 天</b>（波段持有，3 日不见效减半、5 日到期无条件清仓）。各股具体周期见个股计划「持仓周期」字段。</li>
+<li>大盘情绪「高潮期」：情绪亢奋，短线可积极打板 / 接力主线龙头；持仓周期以各股计划为准（资金持续流入走 3-5 天波段，脉冲式流入则 1-2 天兑现）。高潮后易现分歧，次日竞价不及预期须快速兑现，忌追高位尾盘板。</li>
+<li>短线情绪靠题材维系（固态电池、AI应用、钠离子电池主线），打板接力优先主线龙头与高封单品种。</li>
+<li>连板高位股注意炸板与分歧风险；龙虎榜净卖的个股留意获利盘抛压；A股 T+1 规则——当日买入当日不可卖，止损最早买入次日执行。</li>
+<li>以上为数据模型建议，不构成投资建议；实际买卖请结合次日竞价与个人风控。</li>
+</ul>
+</div></div>
+
+</div></body></html>
