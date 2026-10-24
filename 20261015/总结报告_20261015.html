@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261015 交易计划总结报告</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--border:#e3e7ed;--text:#1b2330;--text-2:#5b6675;--text-3:#8a94a3;
+--brand:#1d4e89;--brand-soft:#eaf1f9;--up:#c62828;--up-soft:#fdecec;--down:#1b7a4b;--down-soft:#e8f5ee;
+--warn:#9a6205;--warn-soft:#fdf3e0;--radius:10px;--shadow:0 1px 2px rgba(20,30,45,.04),0 4px 16px rgba(20,30,45,.05)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;
+align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.brand{font-size:17px;font-weight:600;letter-spacing:.2px}.brand span{color:var(--text-3);font-weight:400;font-size:13px;margin-left:8px}
+.header-meta{margin-left:auto;font-size:12px;color:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.panel-h{padding:13px 20px;border-bottom:1px solid var(--border);background:var(--surface-2);
+font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-h .no{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--brand);
+color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:600}
+.panel-b{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:right;font-weight:600;color:var(--text-2);font-size:12px;background:var(--surface-2)}
+td:first-child,th:first-child{text-align:left;font-weight:600}
+.up{color:var(--up)}.down{color:var(--down)}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:1px 2px;
+background:var(--brand-soft);color:var(--brand)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag.buy{background:var(--up-soft);color:var(--up)}
+.tag.watch{background:var(--warn-soft);color:var(--warn)}
+.tag.mode-ban{background:#fdecec;color:#c62828;font-weight:600}
+.tag.mode-dip{background:#e8f1fb;color:#1a5fa8;font-weight:600}
+.tag.theme{background:var(--brand-soft);color:var(--brand);border:1px solid #cfe0f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 4px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.kpi .k{font-size:12px;color:var(--text-3)}.kpi .v{font-size:17px;font-weight:600;margin-top:3px}
+.kpi .v.up{color:var(--up)}.kpi .v.down{color:var(--down)}
+.narrative{background:var(--brand-soft);border-left:3px solid var(--brand);padding:10px 14px;
+border-radius:0 8px 8px 0;color:var(--text-2);font-size:13px;margin:10px 0}
+.focus-card{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.focus-head{padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);
+display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--up);color:#fff;
+font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.focus-name{font-size:15px;font-weight:600;color:var(--brand);text-decoration:none}
+.focus-score{margin-left:auto;font-size:12px;color:var(--text-2);font-weight:600}
+.focus-meta{padding:8px 16px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-2);background:#fff}
+.reasons{margin:0;padding:6px 16px 8px 34px;font-size:13px}
+.reasons li{margin:4px 0}
+.focus-link{padding:0 16px 10px;font-size:12px}
+.focus-link a{color:var(--brand);text-decoration:none;font-weight:500}
+.note{font-size:12px;color:var(--text-3);margin-top:8px}
+.core{font-size:13px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);
+border-radius:8px;padding:10px 14px;margin:6px 0}
+</style></head><body>
+<header><div class="brand">📊 交易计划 · 当日总结报告<span>20261015</span></div>
+<div class="header-meta">生成于 2026-10-15 23:29　|　源报告：_tmp_report_20261015.html</div></header>
+<div class="wrap">
+
+<div class="panel"><div class="panel-h"><span class="no">一</span>当日大盘走势总结</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">上证指数</div><div class="v down">-1.59%</div><div class="k">3707.48 · 7744亿</div></div><div class="kpi"><div class="k">深证成指</div><div class="v down">-2.43%</div><div class="k">11816.79 · 8586亿</div></div><div class="kpi"><div class="k">创业板指</div><div class="v down">-2.92%</div><div class="k">2783.17 · 4149亿</div></div><div class="kpi"><div class="k">北证50</div><div class="v down">-3.44%</div><div class="k">967.51 · 131亿</div></div><div class="kpi"><div class="k">沪深300</div><div class="v down">-1.23%</div><div class="k">4166.01 · 4835亿</div></div><div class="kpi"><div class="k">科创50</div><div class="v down">-1.50%</div><div class="k">1359.52 · 825亿</div></div>
+</div>
+<div class="narrative">上证指数收 -1.59%，深证成指 -2.43%，创业板指 -2.92%，北证50 -3.44%（逆势走强），科创50 -1.50%（跌幅最深）。沪强深弱、权重相对抗跌，成长科技（科创/创业板）明显承压，市场呈结构性分化。两市合计成交约 1.63 万亿，量能温和。</div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3707.48</td><td class="down">-1.59%</td><td>7744 亿</td></tr><tr><td>深证成指</td><td>11816.79</td><td class="down">-2.43%</td><td>8586 亿</td></tr><tr><td>创业板指</td><td>2783.17</td><td class="down">-2.92%</td><td>4149 亿</td></tr><tr><td>北证50</td><td>967.51</td><td class="down">-3.44%</td><td>131 亿</td></tr><tr><td>沪深300</td><td>4166.01</td><td class="down">-1.23%</td><td>4835 亿</td></tr><tr><td>科创50</td><td>1359.52</td><td class="down">-1.50%</td><td>825 亿</td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">二</span>大盘情绪（短线情绪周期 · 持仓周期按个股自适配）</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">情绪周期</div><div class="v warn">修复 / 混沌期</div><div class="k">综合评分 0</div></div>
+  <div class="kpi"><div class="k">涨停 / 跌停</div><div class="v">36 / 26</div><div class="k">涨停池 / 跌停池</div></div>
+  <div class="kpi"><div class="k">炸板率</div><div class="v up">16%</div><div class="k">炸板 / (涨停+炸板)</div></div>
+  <div class="kpi"><div class="k">涨 / 跌家数</div><div class="v">417 / 4925</div><div class="k">全市场广度</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">5 板</div><div class="k">空间高度</div></div>
+</div>
+<div class="narrative"><span class="chip" style="margin:2px">涨停 36 家，中性</span><span class="chip" style="margin:2px">炸板率 16%，封板坚决</span><span class="chip" style="margin:2px">涨跌家数 417 / 4925，普跌</span><span class="chip" style="margin:2px">跌停 26 家，有恐慌抛压</span><span class="chip" style="margin:2px">最高 5 板，梯队健康</span></div>
+<div class="narrative"><b>接力晋级（前日 → 今日）：</b>前日（2026-10-14）命中 37 只 → 今日仍命中 7 只（保持率 18.9%），其中涨停 6 只（涨停转化 16.2%）：<span class="chip">慈文传媒</span><span class="chip">阳光乳业</span><span class="chip">百洋股份</span><span class="chip">新华文轩</span><span class="chip">富春染织</span>。短线接力赚钱效应良好，可积极参与。</div>
+<div class="core"><b>短线操作建议（持仓周期按个股资金流自动区分 1-2 天 / 3-5 天）：</b>情绪中性偏震荡，轻仓试错主线首板 / 低吸，降低打板仓位，快进快出、不恋战。</div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">三</span>盘面特征与主线</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">当日涨停</div><div class="v up">36 家</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">5 板</div></div>
+  <div class="kpi"><div class="k">生成计划</div><div class="v">4 只</div></div>
+</div>
+<table><thead><tr><th>连板梯队</th><th>家数</th></tr></thead><tbody><tr><td>5 板</td><td>2 家</td></tr><tr><td>3 板</td><td>2 家</td></tr><tr><td>2 板</td><td>2 家</td></tr><tr><td>1 板</td><td>30 家</td></tr></tbody></table>
+<div class="core"><b>复盘核心结论：</b>今日信号较强，命中 4 只（通达信复查，剔除 26 只逆行业）；主线：白酒概念（舆情 5 分·极热·偏正面）；资金聚焦：CRO（主力净流入 +10.56 亿）；前日（2026-10-14）命中 37 只 → 今日仍命中 7 只，其中涨停 6 只（慈文传媒、阳光乳业、百洋股份、新华文轩、富春染织）。</div>
+<div class="note"><b>舆情热点：</b><span class="chip">白酒概念（5 分·极热·偏正面）</span><span class="chip">证券IT（5 分·极热·偏正面）</span><span class="chip">券商（4 分·高热·偏正面）</span></div>
+<h3 style="margin:14px 0 6px;font-size:14px">板块资金流 TOP10（主力净流入 + 舆情热度）</h3>
+<table><thead><tr><th>#</th><th>板块</th><th>主力净流入</th><th>涨跌幅</th><th>舆情</th><th>领涨股</th></tr></thead><tbody><tr><td>1</td><td><b>白酒概念</b></td><td class="up">+4.87亿</td><td class="up">-1.11%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">皇台酒业</span></td></tr><tr><td>2</td><td><b>证券IT</b></td><td class="up">+2.86亿</td><td class="up">-0.36%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">大智慧</span></td></tr><tr><td>3</td><td><b>券商</b></td><td class="up">+2.47亿</td><td class="up">+0.27%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">华林证券</span></td></tr><tr><td>4</td><td><b>CRO</b></td><td class="up">+10.56亿</td><td class="up">-1.06%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">N联亚药业</span></td></tr><tr><td>5</td><td><b>龙头股</b></td><td class="up">+2.11亿</td><td class="up">-0.64%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">百洋股份</span></td></tr><tr><td>6</td><td><b>流感</b></td><td class="up">+2.65亿</td><td class="up">-1.25%</td><td>2 分 · 微热·偏负面</td><td><span class="chip">向日葵</span></td></tr><tr><td>7</td><td><b>青蒿素</b></td><td class="up">+2.03亿</td><td class="up">-0.48%</td><td>2 分 · 微热·中性</td><td><span class="chip">百花医药</span></td></tr><tr><td>8</td><td><b>超级品牌</b></td><td class="up">+7.22亿</td><td class="up">-1.06%</td><td>2 分 · 微热·中性</td><td><span class="chip">小商品城</span></td></tr><tr><td>9</td><td><b>肝素</b></td><td class="up">+1.98亿</td><td class="up">-1.26%</td><td>1 分 · 低热·偏正面</td><td><span class="chip">华北制药</span></td></tr><tr><td>10</td><td><b>千金藤素</b></td><td class="up">+2.59亿</td><td class="up">-1.39%</td><td>1 分 · 冷·无舆情</td><td><span class="chip">华北制药</span></td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">四</span>最佳推荐排行榜 TOP4（按综合分排序 · 含入选理由）</div><div class="panel-b">
+<div class="note" style="margin-bottom:6px">筛选逻辑：评分 / 连板梯队 / 封单比 / 龙虎榜净买 / 题材命中当日主线（白酒概念、证券IT、券商）综合排序，双轮策略（题材代表优先 + 高分核心填充）。重点关注：000995、300111、600812、002945</div>
+<div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">1</span>
+        <a href="000995_皇台酒业.html" class="focus-name">000995 皇台酒业</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 85（综合 98）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 13.37</span><span>涨停价 13.37</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>1 连板</span>
+        <span>封单比 3.77%</span>
+        <span>龙虎榜 4775万</span>
+        
+        
+        <span class="tag theme">白酒概念</span><span class="tag theme">昨日高振幅</span><span class="tag theme">昨日高换手</span><span class="tag theme">QFII重仓</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「白酒概念、昨日高振幅、昨日高换手、QFII重仓」，当日板块主力净流入 +4.87亿（-1.11%，热度 5 分 极热·偏正面）</li><li>封单比 3.77%（封板资金锁定较强）</li><li>龙虎榜净买 4775万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：修复 / 混沌期（综合 0 分），高位接力风险大，宜以竞价分歧低吸/低位补涨为主，严控仓位</li></ul>
+      <div class="focus-link"><a href="000995_皇台酒业.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">2</span>
+        <a href="300111_向日葵.html" class="focus-name">300111 向日葵</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag watch">谨慎接力</span>
+        <span class="focus-score">评分 69（综合 77）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 3.71</span><span>涨停价 3.71</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        <span>1 连板</span>
+        <span>封单比 0.49%</span>
+        <span>龙虎榜 1.08亿</span>
+        
+        
+        <span class="tag theme">流感</span><span class="tag theme">深股通</span><span class="tag theme">幽门螺杆菌概念</span><span class="tag theme">医药生物</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「流感、深股通、幽门螺杆菌概念、医药生物」，当日板块主力净流入 +2.65亿（-1.25%，热度 2 分 微热·偏负面）</li><li>封单比 0.49%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 1.08亿，有资金进场痕迹</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：修复 / 混沌期（综合 0 分），高位接力风险大，宜以竞价分歧低吸/低位补涨为主，严控仓位</li></ul>
+      <div class="focus-link"><a href="300111_向日葵.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">3</span>
+        <a href="600812_华北制药.html" class="focus-name">600812 华北制药</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag watch">谨慎接力</span>
+        <span class="focus-score">评分 59（综合 67）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 6.57</span><span>涨停价 6.57</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        <span>1 连板</span>
+        <span>封单比 0.09%</span>
+        <span>龙虎榜 7624万</span>
+        
+        
+        <span class="tag theme">肝素</span><span class="tag theme">千金藤素</span><span class="tag theme">昨日高振幅</span><span class="tag theme">昨日高换手</span><span class="tag theme">沪股通</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「肝素、千金藤素、昨日高振幅、昨日高换手、沪股通」，当日板块主力净流入 +1.98亿（-1.26%，热度 1 分 低热·偏正面）</li><li>封单比 0.09%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 7624万，有资金进场痕迹</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：修复 / 混沌期（综合 0 分），高位接力风险大，宜以竞价分歧低吸/低位补涨为主，严控仓位</li></ul>
+      <div class="focus-link"><a href="600812_华北制药.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">4</span>
+        <a href="002945_华林证券.html" class="focus-name">002945 华林证券</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag watch">谨慎接力</span>
+        <span class="focus-score">评分 56（综合 64）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 15.39</span><span>涨停价 15.39</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>1 连板</span>
+        <span>封单比 0.04%</span>
+        <span>龙虎榜 1.93亿</span>
+        
+        
+        <span class="tag theme">券商</span><span class="tag theme">中盘股</span><span class="tag theme">深股通</span><span class="tag theme">融资融券</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「券商、中盘股、深股通、融资融券」，当日板块主力净流入 +2.47亿（+0.27%，热度 4 分 高热·偏正面）</li><li>封单比 0.04%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 1.93亿，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：修复 / 混沌期（综合 0 分），高位接力风险大，宜以竞价分歧低吸/低位补涨为主，严控仓位</li></ul>
+      <div class="focus-link"><a href="002945_华林证券.html" target="_blank">查看完整交易计划 →</a></div>
+    </div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">五</span>操作提示与风险（按个股资金流自动区分持仓周期）</div><div class="panel-b">
+<ul style="margin:0;padding-left:20px;font-size:13px">
+<li><b>持仓周期按个股资金流自动切换</b>：资金持续性差/单日脉冲 → <b>1-2 天</b>（次日 T+1 溢价兑现，不恋战）；连续 3-5 日主力净流入且超大单/机构持续买入 → <b>3-5 天</b>（波段持有，3 日不见效减半、5 日到期无条件清仓）。各股具体周期见个股计划「持仓周期」字段。</li>
+<li>大盘情绪「修复 / 混沌期」：情绪中性偏震荡，轻仓试错主线首板 / 低吸，降低打板仓位，快进快出、不恋战。</li>
+<li>短线情绪靠题材维系（白酒概念、证券IT、券商主线），打板接力优先主线龙头与高封单品种。</li>
+<li>连板高位股注意炸板与分歧风险；龙虎榜净卖的个股留意获利盘抛压；A股 T+1 规则——当日买入当日不可卖，止损最早买入次日执行。</li>
+<li>以上为数据模型建议，不构成投资建议；实际买卖请结合次日竞价与个人风控。</li>
+</ul>
+</div></div>
+
+</div></body></html>
