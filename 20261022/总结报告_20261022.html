@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261022 交易计划总结报告</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--border:#e3e7ed;--text:#1b2330;--text-2:#5b6675;--text-3:#8a94a3;
+--brand:#1d4e89;--brand-soft:#eaf1f9;--up:#c62828;--up-soft:#fdecec;--down:#1b7a4b;--down-soft:#e8f5ee;
+--warn:#9a6205;--warn-soft:#fdf3e0;--radius:10px;--shadow:0 1px 2px rgba(20,30,45,.04),0 4px 16px rgba(20,30,45,.05)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;
+align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.brand{font-size:17px;font-weight:600;letter-spacing:.2px}.brand span{color:var(--text-3);font-weight:400;font-size:13px;margin-left:8px}
+.header-meta{margin-left:auto;font-size:12px;color:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.panel-h{padding:13px 20px;border-bottom:1px solid var(--border);background:var(--surface-2);
+font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-h .no{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--brand);
+color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:600}
+.panel-b{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:right;font-weight:600;color:var(--text-2);font-size:12px;background:var(--surface-2)}
+td:first-child,th:first-child{text-align:left;font-weight:600}
+.up{color:var(--up)}.down{color:var(--down)}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:1px 2px;
+background:var(--brand-soft);color:var(--brand)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag.buy{background:var(--up-soft);color:var(--up)}
+.tag.watch{background:var(--warn-soft);color:var(--warn)}
+.tag.mode-ban{background:#fdecec;color:#c62828;font-weight:600}
+.tag.mode-dip{background:#e8f1fb;color:#1a5fa8;font-weight:600}
+.tag.theme{background:var(--brand-soft);color:var(--brand);border:1px solid #cfe0f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 4px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.kpi .k{font-size:12px;color:var(--text-3)}.kpi .v{font-size:17px;font-weight:600;margin-top:3px}
+.kpi .v.up{color:var(--up)}.kpi .v.down{color:var(--down)}
+.narrative{background:var(--brand-soft);border-left:3px solid var(--brand);padding:10px 14px;
+border-radius:0 8px 8px 0;color:var(--text-2);font-size:13px;margin:10px 0}
+.focus-card{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.focus-head{padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);
+display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--up);color:#fff;
+font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.focus-name{font-size:15px;font-weight:600;color:var(--brand);text-decoration:none}
+.focus-score{margin-left:auto;font-size:12px;color:var(--text-2);font-weight:600}
+.focus-meta{padding:8px 16px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-2);background:#fff}
+.reasons{margin:0;padding:6px 16px 8px 34px;font-size:13px}
+.reasons li{margin:4px 0}
+.focus-link{padding:0 16px 10px;font-size:12px}
+.focus-link a{color:var(--brand);text-decoration:none;font-weight:500}
+.note{font-size:12px;color:var(--text-3);margin-top:8px}
+.core{font-size:13px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);
+border-radius:8px;padding:10px 14px;margin:6px 0}
+</style></head><body>
+<header><div class="brand">📊 交易计划 · 当日总结报告<span>20261022</span></div>
+<div class="header-meta">生成于 2026-10-22 19:07　|　源报告：_tmp_report_20261022.html</div></header>
+<div class="wrap">
+
+<div class="panel"><div class="panel-h"><span class="no">一</span>当日大盘走势总结</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">上证指数</div><div class="v down">-1.48%</div><div class="k">3658.03 · 7061亿</div></div><div class="kpi"><div class="k">深证成指</div><div class="v down">-2.96%</div><div class="k">11357.32 · 8226亿</div></div><div class="kpi"><div class="k">创业板指</div><div class="v down">-4.37%</div><div class="k">2576.90 · 4041亿</div></div><div class="kpi"><div class="k">北证50</div><div class="v down">-0.93%</div><div class="k">966.74 · 135亿</div></div><div class="kpi"><div class="k">沪深300</div><div class="v down">-1.84%</div><div class="k">4036.30 · 4351亿</div></div><div class="kpi"><div class="k">科创50</div><div class="v down">-2.78%</div><div class="k">1305.87 · 728亿</div></div>
+</div>
+<div class="narrative">上证指数收 -1.48%，深证成指 -2.96%，创业板指 -4.37%，北证50 -0.93%（逆势走强），科创50 -2.78%（跌幅最深）。沪强深弱、权重相对抗跌，成长科技（科创/创业板）明显承压，市场呈结构性分化。两市合计成交约 1.53 万亿，量能温和。</div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3658.03</td><td class="down">-1.48%</td><td>7061 亿</td></tr><tr><td>深证成指</td><td>11357.32</td><td class="down">-2.96%</td><td>8226 亿</td></tr><tr><td>创业板指</td><td>2576.90</td><td class="down">-4.37%</td><td>4041 亿</td></tr><tr><td>北证50</td><td>966.74</td><td class="down">-0.93%</td><td>135 亿</td></tr><tr><td>沪深300</td><td>4036.30</td><td class="down">-1.84%</td><td>4351 亿</td></tr><tr><td>科创50</td><td>1305.87</td><td class="down">-2.78%</td><td>728 亿</td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">二</span>大盘情绪（短线情绪周期 · 持仓周期按个股自适配）</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">情绪周期</div><div class="v down">冰点 / 退潮期</div><div class="k">综合评分 -2</div></div>
+  <div class="kpi"><div class="k">涨停 / 跌停</div><div class="v">33 / 49</div><div class="k">涨停池 / 跌停池</div></div>
+  <div class="kpi"><div class="k">炸板率</div><div class="v down">41%</div><div class="k">炸板 / (涨停+炸板)</div></div>
+  <div class="kpi"><div class="k">涨 / 跌家数</div><div class="v">516 / 4826</div><div class="k">全市场广度</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">5 板</div><div class="k">空间高度</div></div>
+</div>
+<div class="narrative"><span class="chip" style="margin:2px">涨停 33 家，中性</span><span class="chip" style="margin:2px">炸板率 41%，分歧较大</span><span class="chip" style="margin:2px">涨跌家数 516 / 4826，普跌</span><span class="chip" style="margin:2px">跌停 49 家，有恐慌抛压</span><span class="chip" style="margin:2px">最高 5 板，梯队健康</span></div>
+<div class="narrative"><b>接力晋级（前日 → 今日）：</b>前日（2026-10-21）命中 39 只 → 今日仍命中 7 只（保持率 17.9%），其中涨停 7 只（涨停转化 17.9%）：<span class="chip">海洋王</span><span class="chip">哈空调</span><span class="chip">三峡新材</span><span class="chip">大业股份</span><span class="chip">上海九百</span>。短线接力赚钱效应良好，可积极参与。</div>
+<div class="core"><b>短线操作建议（持仓周期按个股资金流自动区分 1-2 天 / 3-5 天）：</b>情绪偏弱，短线以防守为主：空仓或只做超跌 / 主线回调低吸，回避高位连板与打板。</div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">三</span>盘面特征与主线</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">当日涨停</div><div class="v up">33 家</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">5 板</div></div>
+  <div class="kpi"><div class="k">生成计划</div><div class="v">2 只</div></div>
+</div>
+<table><thead><tr><th>连板梯队</th><th>家数</th></tr></thead><tbody><tr><td>5 板</td><td>2 家</td></tr><tr><td>3 板</td><td>2 家</td></tr><tr><td>2 板</td><td>5 家</td></tr><tr><td>1 板</td><td>24 家</td></tr></tbody></table>
+<div class="core"><b>复盘核心结论：</b>今日信号一般，命中 4 只；主线：空心杯电机（舆情 5 分·极热·偏正面）；资金聚焦：BIPV概念(光伏建筑一体化)（主力净流入 +5.05 亿）；前日（2026-10-21）命中 39 只 → 今日仍命中 7 只，其中涨停 7 只（海洋王、哈空调、三峡新材、大业股份、上海九百）。</div>
+<div class="note"><b>舆情热点：</b><span class="chip">空心杯电机（5 分·极热·偏正面）</span><span class="chip">轮边电机（5 分·极热·偏正面）</span><span class="chip">机器人执行器概念（4 分·高热·偏正面）</span></div>
+<h3 style="margin:14px 0 6px;font-size:14px">板块资金流 TOP10（主力净流入 + 舆情热度）</h3>
+<table><thead><tr><th>#</th><th>板块</th><th>主力净流入</th><th>涨跌幅</th><th>舆情</th><th>领涨股</th></tr></thead><tbody><tr><td>1</td><td><b>空心杯电机</b></td><td class="up">+3.20亿</td><td class="up">+1.26%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">鸣志电器</span></td></tr><tr><td>2</td><td><b>轮边电机</b></td><td class="up">+3.12亿</td><td class="up">+0.23%</td><td>5 分 · 极热·偏正面</td><td><span class="chip">大洋电机</span></td></tr><tr><td>3</td><td><b>机器人执行器概念</b></td><td class="up">+2.72亿</td><td class="up">+0.94%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">鸣志电器</span></td></tr><tr><td>4</td><td><b>华为机器人</b></td><td class="up">+2.16亿</td><td class="up">+0.87%</td><td>4 分 · 高热·偏正面</td><td><span class="chip">兆威机电</span></td></tr><tr><td>5</td><td><b>基建</b></td><td class="up">+1.83亿</td><td class="up">-1.64%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">北新路桥</span></td></tr><tr><td>6</td><td><b>颗粒硅</b></td><td class="up">+1.64亿</td><td class="up">-0.23%</td><td>3 分 · 中热·偏正面</td><td><span class="chip">隆基绿能</span></td></tr><tr><td>7</td><td><b>BIPV概念(光伏建筑一体化)</b></td><td class="up">+5.05亿</td><td class="up">-1.93%</td><td>2 分 · 微热·偏正面</td><td><span class="chip">赛福天</span></td></tr><tr><td>8</td><td><b>减速器</b></td><td class="up">+4.44亿</td><td class="up">-0.46%</td><td>2 分 · 微热·偏正面</td><td><span class="chip">奕帆传动</span></td></tr><tr><td>9</td><td><b>蜜雪冰城概念</b></td><td class="up">+1.82亿</td><td class="up">-1.69%</td><td>1 分 · 低热·偏正面</td><td><span class="chip">冰山冷热</span></td></tr><tr><td>10</td><td><b>GDR</b></td><td class="up">+2.19亿</td><td class="up">-0.77%</td><td>1 分 · 低热·偏正面</td><td><span class="chip">乐普医疗</span></td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">四</span>最佳推荐排行榜 TOP2（按综合分排序 · 含入选理由）</div><div class="panel-b">
+<div class="note" style="margin-bottom:6px">筛选逻辑：评分 / 连板梯队 / 封单比 / 龙虎榜净买 / 题材命中当日主线（空心杯电机、轮边电机、机器人执行器概念）综合排序，双轮策略（题材代表优先 + 高分核心填充）。重点关注：003021、301502</div>
+<div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">1</span>
+        <a href="003021_兆威机电.html" class="focus-name">003021 兆威机电</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 75（综合 83）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 83.39</span><span>涨停价 83.39</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>1 连板</span>
+        <span>封单比 0.39%</span>
+        <span>龙虎榜 1.42亿</span>
+        
+        
+        <span class="tag theme">华为机器人</span><span class="tag theme">小盘股</span><span class="tag theme">昨日高振幅</span><span class="tag theme">深股通</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「华为机器人、小盘股、昨日高振幅、深股通」，当日板块主力净流入 +2.16亿（+0.87%，热度 4 分 高热·偏正面）</li><li>封单比 0.39%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 1.42亿，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：冰点 / 退潮期（综合 -2 分），高位接力风险大，宜以竞价分歧低吸/低位补涨为主，严控仓位</li></ul>
+      <div class="focus-link"><a href="003021_兆威机电.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">2</span>
+        <a href="301502_华阳智能.html" class="focus-name">301502 华阳智能</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 71（综合 82）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 54</span><span>涨停价 54</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>1 连板</span>
+        <span>封单比 2.63%</span>
+        <span>龙虎榜 1340万</span>
+        
+        
+        <span class="tag theme">融资融券</span><span class="tag theme">QFII重仓</span><span class="tag theme">智能家居</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「融资融券、QFII重仓、智能家居」，资金与舆情共振</li><li>封单比 2.63%（封板较稳）</li><li>龙虎榜净买 1340万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：冰点 / 退潮期（综合 -2 分），高位接力风险大，宜以竞价分歧低吸/低位补涨为主，严控仓位</li></ul>
+      <div class="focus-link"><a href="301502_华阳智能.html" target="_blank">查看完整交易计划 →</a></div>
+    </div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">五</span>操作提示与风险（按个股资金流自动区分持仓周期）</div><div class="panel-b">
+<ul style="margin:0;padding-left:20px;font-size:13px">
+<li><b>持仓周期按个股资金流自动切换</b>：资金持续性差/单日脉冲 → <b>1-2 天</b>（次日 T+1 溢价兑现，不恋战）；连续 3-5 日主力净流入且超大单/机构持续买入 → <b>3-5 天</b>（波段持有，3 日不见效减半、5 日到期无条件清仓）。各股具体周期见个股计划「持仓周期」字段。</li>
+<li>大盘情绪「冰点 / 退潮期」：情绪偏弱，短线以防守为主：空仓或只做超跌 / 主线回调低吸，回避高位连板与打板。</li>
+<li>短线情绪靠题材维系（空心杯电机、轮边电机、机器人执行器概念主线），打板接力优先主线龙头与高封单品种。</li>
+<li>连板高位股注意炸板与分歧风险；龙虎榜净卖的个股留意获利盘抛压；A股 T+1 规则——当日买入当日不可卖，止损最早买入次日执行。</li>
+<li>以上为数据模型建议，不构成投资建议；实际买卖请结合次日竞价与个人风控。</li>
+</ul>
+</div></div>
+
+</div></body></html>

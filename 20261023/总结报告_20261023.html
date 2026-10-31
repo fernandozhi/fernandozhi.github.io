@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261023 交易计划总结报告</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--border:#e3e7ed;--text:#1b2330;--text-2:#5b6675;--text-3:#8a94a3;
+--brand:#1d4e89;--brand-soft:#eaf1f9;--up:#c62828;--up-soft:#fdecec;--down:#1b7a4b;--down-soft:#e8f5ee;
+--warn:#9a6205;--warn-soft:#fdf3e0;--radius:10px;--shadow:0 1px 2px rgba(20,30,45,.04),0 4px 16px rgba(20,30,45,.05)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;
+align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.brand{font-size:17px;font-weight:600;letter-spacing:.2px}.brand span{color:var(--text-3);font-weight:400;font-size:13px;margin-left:8px}
+.header-meta{margin-left:auto;font-size:12px;color:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.panel-h{padding:13px 20px;border-bottom:1px solid var(--border);background:var(--surface-2);
+font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-h .no{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--brand);
+color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:600}
+.panel-b{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:right;font-weight:600;color:var(--text-2);font-size:12px;background:var(--surface-2)}
+td:first-child,th:first-child{text-align:left;font-weight:600}
+.up{color:var(--up)}.down{color:var(--down)}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin:1px 2px;
+background:var(--brand-soft);color:var(--brand)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag.buy{background:var(--up-soft);color:var(--up)}
+.tag.watch{background:var(--warn-soft);color:var(--warn)}
+.tag.mode-ban{background:#fdecec;color:#c62828;font-weight:600}
+.tag.mode-dip{background:#e8f1fb;color:#1a5fa8;font-weight:600}
+.tag.theme{background:var(--brand-soft);color:var(--brand);border:1px solid #cfe0f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 4px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.kpi .k{font-size:12px;color:var(--text-3)}.kpi .v{font-size:17px;font-weight:600;margin-top:3px}
+.kpi .v.up{color:var(--up)}.kpi .v.down{color:var(--down)}
+.narrative{background:var(--brand-soft);border-left:3px solid var(--brand);padding:10px 14px;
+border-radius:0 8px 8px 0;color:var(--text-2);font-size:13px;margin:10px 0}
+.focus-card{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.focus-head{padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);
+display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--up);color:#fff;
+font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.focus-name{font-size:15px;font-weight:600;color:var(--brand);text-decoration:none}
+.focus-score{margin-left:auto;font-size:12px;color:var(--text-2);font-weight:600}
+.focus-meta{padding:8px 16px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-2);background:#fff}
+.reasons{margin:0;padding:6px 16px 8px 34px;font-size:13px}
+.reasons li{margin:4px 0}
+.focus-link{padding:0 16px 10px;font-size:12px}
+.focus-link a{color:var(--brand);text-decoration:none;font-weight:500}
+.note{font-size:12px;color:var(--text-3);margin-top:8px}
+.core{font-size:13px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);
+border-radius:8px;padding:10px 14px;margin:6px 0}
+</style></head><body>
+<header><div class="brand">📊 交易计划 · 当日总结报告<span>20261023</span></div>
+<div class="header-meta">生成于 2026-10-24 21:41　|　源报告：复盘报告_综合_20261023.html</div></header>
+<div class="wrap">
+
+<div class="panel"><div class="panel-h"><span class="no">一</span>当日大盘走势总结</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">上证指数</div><div class="v up">+0.89%</div><div class="k">3690.48 · 8987亿</div></div><div class="kpi"><div class="k">深证成指</div><div class="v up">+2.79%</div><div class="k">11673.83 · 10576亿</div></div><div class="kpi"><div class="k">创业板指</div><div class="v up">+4.16%</div><div class="k">2684.10 · 5345亿</div></div><div class="kpi"><div class="k">北证50</div><div class="v up">+1.88%</div><div class="k">984.90 · 169亿</div></div><div class="kpi"><div class="k">沪深300</div><div class="v up">+1.71%</div><div class="k">4105.33 · 5582亿</div></div><div class="kpi"><div class="k">科创50</div><div class="v up">+3.04%</div><div class="k">1345.51 · 969亿</div></div>
+</div>
+<div class="narrative">上证指数收 +0.89%，深证成指 +2.79%，创业板指 +4.16%，北证50 +1.88%（逆势走强），科创50 +3.04%（跌幅最深）。北证50 逆势上涨，资金偏好北交所小市值题材股，短线情绪并未全面熄火。两市合计成交约 1.96 万亿，量能温和。</div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3690.48</td><td class="up">+0.89%</td><td>8987 亿</td></tr><tr><td>深证成指</td><td>11673.83</td><td class="up">+2.79%</td><td>10576 亿</td></tr><tr><td>创业板指</td><td>2684.10</td><td class="up">+4.16%</td><td>5345 亿</td></tr><tr><td>北证50</td><td>984.90</td><td class="up">+1.88%</td><td>169 亿</td></tr><tr><td>沪深300</td><td>4105.33</td><td class="up">+1.71%</td><td>5582 亿</td></tr><tr><td>科创50</td><td>1345.51</td><td class="up">+3.04%</td><td>969 亿</td></tr></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">二</span>大盘情绪（短线情绪周期 · 持仓周期按个股自适配）</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">情绪周期</div><div class="v up">高潮期</div><div class="k">综合评分 7</div></div>
+  <div class="kpi"><div class="k">涨停 / 跌停</div><div class="v">82 / 6</div><div class="k">涨停池 / 跌停池</div></div>
+  <div class="kpi"><div class="k">炸板率</div><div class="v up">13%</div><div class="k">炸板 / (涨停+炸板)</div></div>
+  <div class="kpi"><div class="k">涨 / 跌家数</div><div class="v">4406 / 854</div><div class="k">全市场广度</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">6 板</div><div class="k">空间高度</div></div>
+</div>
+<div class="narrative"><span class="chip" style="margin:2px">涨停 82 家，情绪亢奋</span><span class="chip" style="margin:2px">炸板率 13%，封板坚决</span><span class="chip" style="margin:2px">涨跌家数 4406 / 854，普涨</span><span class="chip" style="margin:2px">跌停 6 家，正常</span><span class="chip" style="margin:2px">最高 6 板，高度打开</span></div>
+<div class="narrative"><b>接力晋级（前日 → 今日）：</b>前日（2026-10-22）命中 28 只 → 今日仍命中 9 只（保持率 32.1%），其中涨停 9 只（涨停转化 32.1%）：<span class="chip">林州重机</span><span class="chip">赛福天</span><span class="chip">兆威机电</span><span class="chip">大业股份</span><span class="chip">南方路机</span>。短线接力赚钱效应良好，可积极参与。</div>
+<div class="core"><b>短线操作建议（持仓周期按个股资金流自动区分 1-2 天 / 3-5 天）：</b>情绪亢奋，短线可积极打板 / 接力主线龙头；持仓周期以各股计划为准（资金持续流入走 3-5 天波段，脉冲式流入则 1-2 天兑现）。高潮后易现分歧，次日竞价不及预期须快速兑现，忌追高位尾盘板。</div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">三</span>盘面特征与主线</div><div class="panel-b">
+<div class="kpis">
+  <div class="kpi"><div class="k">当日涨停</div><div class="v up">82 家</div></div>
+  <div class="kpi"><div class="k">最高连板</div><div class="v">6 板</div></div>
+  <div class="kpi"><div class="k">生成计划</div><div class="v">6 只</div></div>
+</div>
+<table><thead><tr><th>连板梯队</th><th>家数</th></tr></thead><tbody><tr><td>6 板</td><td>2 家</td></tr><tr><td>3 板</td><td>1 家</td></tr><tr><td>2 板</td><td>9 家</td></tr><tr><td>1 板</td><td>70 家</td></tr></tbody></table>
+<div class="core"><b>复盘核心结论：</b>今日信号稀少，仅命中 8 只；情绪主线：人工智能（加权热度 64·主升·净情绪 +0.77）；资金聚焦：人工智能（主力净流入 +99.28 亿）；板块结构：共振 42 / 纯情绪 16 / 资金先行 333 / 初现埋伏 2（共 805 个板块）；前日（2026-10-22）命中 28 只 → 今日仍命中 9 只，其中涨停 9 只（林州重机、赛福天、兆威机电、大业股份、南方路机）。</div>
+
+<h3 style="margin:14px 0 6px;font-size:14px">板块资金流 TOP10（主力净流入 + 舆情热度）</h3>
+<table><thead><tr><th>#</th><th>板块</th><th>主力净流入</th><th>涨跌幅</th><th>舆情</th><th>领涨股</th></tr></thead><tbody></tbody></table>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">四</span>最佳推荐排行榜 TOP6（按综合分排序 · 含入选理由）</div><div class="panel-b">
+<div class="note" style="margin-bottom:6px">筛选逻辑：评分 / 连板梯队 / 封单比 / 龙虎榜净买 / 题材命中当日主线（当日主线）综合排序，双轮策略（题材代表优先 + 高分核心填充）。重点关注：603280、603337、688686、002241、000858、920599</div>
+<div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">1</span>
+        <a href="603280_南方路机.html" class="focus-name">603280 南方路机</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag buy">打板/接力</span>
+        <span class="focus-score">评分 79（综合 96）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 31.97</span><span>涨停价 31.97</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>2 连板</span>
+        <span>封单比 1.68%</span>
+        <span>龙虎榜 3799万</span>
+        
+        
+        <span class="tag theme">昨日首板</span><span class="tag theme">机器人概念</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「昨日首板、机器人概念」，资金与舆情共振</li><li>2 连板，处于当日连板梯队低位</li><li>封单比 1.68%（封板较稳）</li><li>龙虎榜净买 3799万，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：高潮期（综合 7 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="603280_南方路机.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">2</span>
+        <a href="603337_杰克科技.html" class="focus-name">603337 杰克科技</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag watch">谨慎接力</span>
+        <span class="focus-score">评分 60（综合 66）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 39.26</span><span>涨停价 39.26</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        <span>1 连板</span>
+        <span>封单比 0.28%</span>
+        <span>龙虎榜 -1.50亿</span>
+        
+        
+        <span class="tag theme">小盘股</span><span class="tag theme">昨日高振幅</span><span class="tag theme">沪股通</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「小盘股、昨日高振幅、沪股通」，资金与舆情共振</li><li>封单比 0.28%（封板偏弱，注意炸板风险）</li><li>龙虎榜净卖 -1.50亿，注意获利盘抛压</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 7 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="603337_杰克科技.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">3</span>
+        <a href="688686_奥普特.html" class="focus-name">688686 奥普特</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag watch">谨慎接力</span>
+        <span class="focus-score">评分 55（综合 65）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 153.20</span><span>涨停价 153.20</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        <span>1 连板</span>
+        <span>封单比 0.25%</span>
+        <span>龙虎榜 2100万</span>
+        
+        
+        <span class="tag theme">小盘股</span><span class="tag theme">沪股通</span><span class="tag theme">融资融券</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「小盘股、沪股通、融资融券」，资金与舆情共振</li><li>封单比 0.25%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 2100万，有资金进场痕迹</li><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 7 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="688686_奥普特.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">4</span>
+        <a href="002241_歌尔股份.html" class="focus-name">002241 歌尔股份</a>
+        <span class="tag mode-ban">打板/接力</span>
+        <span class="tag watch">谨慎接力</span>
+        <span class="focus-score">评分 55（综合 65）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 23.11</span><span>涨停价 23.11</span>
+        <span class="tag mode-ban">持仓 3-5天</span>
+        <span>1 连板</span>
+        <span>封单比 0.45%</span>
+        <span>龙虎榜 4.51亿</span>
+        
+        
+        <span class="tag theme">大盘股</span><span class="tag theme">茅指数</span><span class="tag theme">深股通</span>
+      </div>
+      <ul class="reasons"><li>所属主线题材「大盘股、茅指数、深股通」，资金与舆情共振</li><li>封单比 0.45%（封板偏弱，注意炸板风险）</li><li>龙虎榜净买 4.51亿，有资金进场痕迹</li><li>资金流显示主力/机构持续净流入，可波段持有 3-5 个交易日（非次日兑现）</li><li>大盘环境：高潮期（综合 7 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="002241_歌尔股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">5</span>
+        <a href="000858_五 粮 液.html" class="focus-name">000858 五 粮 液</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 98（综合 100）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 73.86</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        
+        
+        
+        <span>止损 71.71</span>
+        
+        
+      </div>
+      <ul class="reasons"><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 7 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="000858_五 粮 液.html" target="_blank">查看完整交易计划 →</a></div>
+    </div><div class="focus-card">
+      <div class="focus-head">
+        <span class="rank">6</span>
+        <a href="920599_同力股份.html" class="focus-name">920599 同力股份</a>
+        <span class="tag mode-dip">低吸/顺势</span>
+        <span class="tag buy">买入</span>
+        <span class="focus-score">评分 91（综合 93）</span>
+      </div>
+      <div class="focus-meta">
+        <span>现价 18.49</span>
+        <span class="tag mode-dip">持仓 1-2天</span>
+        
+        
+        
+        <span>止损 18.02</span>
+        
+        
+      </div>
+      <ul class="reasons"><li>资金流持续性一般/单日脉冲，按 1-2 天短线处理，次日溢价兑现为主</li><li>大盘环境：高潮期（综合 7 分），情绪亢奋易分歧，追板仅限主线核心，次日竞价不及预期须快速兑现</li></ul>
+      <div class="focus-link"><a href="920599_同力股份.html" target="_blank">查看完整交易计划 →</a></div>
+    </div>
+</div></div>
+
+<div class="panel"><div class="panel-h"><span class="no">五</span>操作提示与风险（按个股资金流自动区分持仓周期）</div><div class="panel-b">
+<ul style="margin:0;padding-left:20px;font-size:13px">
+<li><b>持仓周期按个股资金流自动切换</b>：资金持续性差/单日脉冲 → <b>1-2 天</b>（次日 T+1 溢价兑现，不恋战）；连续 3-5 日主力净流入且超大单/机构持续买入 → <b>3-5 天</b>（波段持有，3 日不见效减半、5 日到期无条件清仓）。各股具体周期见个股计划「持仓周期」字段。</li>
+<li>大盘情绪「高潮期」：情绪亢奋，短线可积极打板 / 接力主线龙头；持仓周期以各股计划为准（资金持续流入走 3-5 天波段，脉冲式流入则 1-2 天兑现）。高潮后易现分歧，次日竞价不及预期须快速兑现，忌追高位尾盘板。</li>
+<li>短线情绪靠题材维系（当日主线主线），打板接力优先主线龙头与高封单品种。</li>
+<li>连板高位股注意炸板与分歧风险；龙虎榜净卖的个股留意获利盘抛压；A股 T+1 规则——当日买入当日不可卖，止损最早买入次日执行。</li>
+<li>以上为数据模型建议，不构成投资建议；实际买卖请结合次日竞价与个人风控。</li>
+</ul>
+</div></div>
+
+</div></body></html>
